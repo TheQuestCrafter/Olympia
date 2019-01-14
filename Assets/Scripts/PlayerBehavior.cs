@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerBehavior : MonoBehaviour
 {
     BoxCollider2D bc2D;
+    SpriteRenderer sr;
     public float speed;
     public float moveHorizontal, moveVertical;
     Vector2 Direction; // made with moveHor and moveVer
@@ -33,6 +34,7 @@ public class PlayerBehavior : MonoBehaviour
         Screen.SetResolution(240, 160, false);
 
         this.bc2D = GetComponent<BoxCollider2D>();
+        this.sr = GetComponent<SpriteRenderer>();
 
         this.speed = 0.1f;
         this.Direction = Vector2.zero;
@@ -53,7 +55,21 @@ public class PlayerBehavior : MonoBehaviour
         Movement();
         Fire();
 
+        TurnOffInvulnerability();
+
         if(invulnerabilityOn)
+        {
+            sr.color = new Color(1f, 1f, 1f, 0.5f);
+        }
+        else
+        {
+            sr.color = new Color(1f, 1f, 1f, 1f);
+        }
+    }
+
+    private void TurnOffInvulnerability()
+    {
+        if (invulnerabilityOn)
         {
             if (Time.time >= invulnerabilityOffTime)
             {

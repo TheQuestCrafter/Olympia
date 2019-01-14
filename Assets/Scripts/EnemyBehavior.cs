@@ -75,7 +75,6 @@ public class EnemyBehavior : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             Destroy(this.gameObject);
-            //if()
             player.GetComponent<PlayerBehavior>().health--;
         }
     }
