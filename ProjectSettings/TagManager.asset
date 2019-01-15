@@ -8,6 +8,7 @@ TagManager:
   - PlayerBullet
   - PlayerFireBullet
   - PlayerLightingBullet
+  - EnemySpawner
   layers:
   - Default
   - TransparentFX
