@@ -22,6 +22,7 @@ public class BossScriptTest : MonoBehaviour
 
     CircleCollider2D cc2D;
     GameObject player;
+    GameObject bullet;
     public int hp;
 
     // Use this for initialization
@@ -43,30 +44,25 @@ public class BossScriptTest : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "PlayerBullet")
         {
-            hp -= player.GetComponent<PlayerBehavior>().weaponDamage;
+            hp -= player.GetComponent<BulletManager>().weaponDamage;
             Destroy(collision.gameObject);
 
         }
         if (collision.tag == "PlayerFireBullet")
         {
-            hp -= player.GetComponent<PlayerBehavior>().weaponDamage;
+            hp -= player.GetComponent<BulletManager>().weaponDamage;
             Destroy(collision.gameObject);
             StartCoroutine(FireDamage(1f, 5, 1));
 
         }
-        if (collision.tag == "PlayerLightingBullet")
-        {
-            hp -= player.GetComponent<PlayerBehavior>().weaponDamage;
-            Destroy(collision.gameObject);
-            StartCoroutine(FireDamage(1f, 5, 1));
 
-        }
     }
 
 }
