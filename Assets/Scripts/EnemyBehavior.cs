@@ -6,7 +6,7 @@ public class EnemyBehavior : MonoBehaviour
 {
     CircleCollider2D cc2D;
     GameObject player;
-    int hp;
+    public int hp;
     Vector2 Direction;
     public float speed;
     bool lockedOn;
@@ -22,7 +22,8 @@ public class EnemyBehavior : MonoBehaviour
 
         cc2D = GetComponent<CircleCollider2D>();
         lockedOn = false;
-        speed = 0.1f;
+        speed = 0f;
+        
     }
 	
 	// Update is called once per frame
@@ -64,8 +65,11 @@ public class EnemyBehavior : MonoBehaviour
     {
         if (collision.tag == "PlayerBullet")
         {
+          
             Destroy(collision.gameObject);
             Destroy(this.gameObject);
+            
+
         }
     }
 

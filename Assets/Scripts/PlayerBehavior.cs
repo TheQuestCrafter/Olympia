@@ -4,6 +4,22 @@ using UnityEngine;
 
 public class PlayerBehavior : MonoBehaviour
 {
+
+    IEnumerator LightingDamage(float damageDuration, int damageCount)
+    {
+        lightingOn = true;
+        int currentCount = 0;
+        while (currentCount < damageCount)
+        {
+            weaponDamage = 5;
+            yield return new WaitForSeconds(damageDuration);
+            currentCount++;
+        }
+        lightingOn = false;
+    }
+
+    private bool lightingOn;
+
     BoxCollider2D bc2D;
     SpriteRenderer sr;
     public float speed;
@@ -14,9 +30,9 @@ public class PlayerBehavior : MonoBehaviour
     public float invulnerabilityDuration;
     public float invulnerabilityOffTime;
     public int health;
-    int weaponSelected;
+    public int weaponSelected;
 
-    int weaponDamage;
+    public int weaponDamage;
     public float fireRate; // time between firing
     float nextFire; // the time in-game when the player can fire again.
     public float bulletSpeed;
@@ -42,7 +58,7 @@ public class PlayerBehavior : MonoBehaviour
         invulnerabilityOn = false;
         invulnerabilityDuration = 1f;
         health = 3; // will normally start with 3 hp
-        weaponSelected = 0; // default weapon selected
+        //weaponSelected = 3; // default weapon selected
         weaponDamage = 5;
         fireRate = 0.2f;
         bulletSpeed = 500;
@@ -121,16 +137,19 @@ public class PlayerBehavior : MonoBehaviour
             case 1:
                 {
                     // Zeus
+                    FireZeus();
                     break;
                 }
             case 2:
                 {
                     // Poseidon
+                    FirePoseidon();
                     break;
                 }
             case 3:
                 {
                     // Hades
+                    FireHades();
                     break;
                 }
         }
@@ -155,6 +174,79 @@ public class PlayerBehavior : MonoBehaviour
 
             // Destroy the bullet after bulletLife seconds
             Destroy(bullet, bulletLife);
+        }
+    }
+
+    void FireZeus()
+    {
+        weaponDamage = 5;
+        fireRate = 0.2f;
+        if (Time.time > nextFire)
+        {
+            // Create the Bullet from the Bullet Prefab
+            var bullet = (GameObject)Instantiate(
+            zeusBulletPrefab,
+            bulletSpawn.position,
+            bulletSpawn.rotation);
+
+            // *** nextFire = time right now + the constant cooldown of 0.3f seconds. AKA you're stating the next time you can fire is at that time or later, not earlier.
+            nextFire = Time.time + fireRate;
+
+            // Add velocity to the bullet
+            bullet.GetComponent<Rigidbody2D>().AddForce(new Vector2(1, 0) * bulletSpeed);
+
+
+            // Destroy the bullet after bulletLife seconds
+            Destroy(bullet, bulletLife);
+            
+        }
+    }
+    void FirePoseidon()
+    {
+        weaponDamage = 1;
+        fireRate = 0.01f;
+        if (Time.time > nextFire)
+        {
+            // Create the Bullet from the Bullet Prefab
+            var bullet = (GameObject)Instantiate(
+            defaultBulletPrefab,
+            bulletSpawn.position,
+            bulletSpawn.rotation);
+
+            // *** nextFire = time right now + the constant cooldown of 0.3f seconds. AKA you're stating the next time you can fire is at that time or later, not earlier.
+            nextFire = Time.time + fireRate;
+
+            // Add velocity to the bullet
+            bullet.GetComponent<Rigidbody2D>().AddForce(new Vector2(1, 0) * bulletSpeed);
+
+
+            // Destroy the bullet after bulletLife seconds
+            Destroy(bullet, bulletLife);
+
+        }
+    }
+    void FireHades()
+    {
+        weaponDamage = 5;
+        fireRate = 0.2f;
+        if (Time.time > nextFire)
+        {
+            // Create the Bullet from the Bullet Prefab
+            var bullet = (GameObject)Instantiate(
+            hadesBulletPrefab,
+            bulletSpawn.position,
+            bulletSpawn.rotation);
+
+            // *** nextFire = time right now + the constant cooldown of 0.3f seconds. AKA you're stating the next time you can fire is at that time or later, not earlier.
+            nextFire = Time.time + fireRate;
+
+            // Add velocity to the bullet
+            bullet.GetComponent<Rigidbody2D>().AddForce(new Vector2(1, 0) * bulletSpeed);
+
+
+            // Destroy the bullet after bulletLife seconds
+            Destroy(bullet, bulletLife);
+
         }
     }
 }

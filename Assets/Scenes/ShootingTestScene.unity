@@ -203,11 +203,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4015072838400334, guid: 5de573169b807b546830630e0eeb419a, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 8.055555
+      value: 8.93
       objectReference: {fileID: 0}
     - target: {fileID: 4015072838400334, guid: 5de573169b807b546830630e0eeb419a, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.004986152
+      value: -0.21
       objectReference: {fileID: 0}
     - target: {fileID: 4015072838400334, guid: 5de573169b807b546830630e0eeb419a, type: 2}
       propertyPath: m_LocalPosition.z
@@ -233,53 +233,50 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 5de573169b807b546830630e0eeb419a, type: 2}
-  m_IsPrefabParent: 0
---- !u!1001 &666804645
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
     - target: {fileID: 4015072838400334, guid: 5de573169b807b546830630e0eeb419a, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 8.002615
+      propertyPath: m_LocalScale.x
+      value: 18.973314
       objectReference: {fileID: 0}
     - target: {fileID: 4015072838400334, guid: 5de573169b807b546830630e0eeb419a, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 1.0538436
+      propertyPath: m_LocalScale.y
+      value: 18.973314
       objectReference: {fileID: 0}
     - target: {fileID: 4015072838400334, guid: 5de573169b807b546830630e0eeb419a, type: 2}
-      propertyPath: m_LocalPosition.z
+      propertyPath: m_LocalScale.z
+      value: 18.973314
+      objectReference: {fileID: 0}
+    - target: {fileID: 114479619375457156, guid: 5de573169b807b546830630e0eeb419a,
+        type: 2}
+      propertyPath: hp
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114479619375457156, guid: 5de573169b807b546830630e0eeb419a,
+        type: 2}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4015072838400334, guid: 5de573169b807b546830630e0eeb419a, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4015072838400334, guid: 5de573169b807b546830630e0eeb419a, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4015072838400334, guid: 5de573169b807b546830630e0eeb419a, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4015072838400334, guid: 5de573169b807b546830630e0eeb419a, type: 2}
-      propertyPath: m_LocalRotation.w
+    - target: {fileID: 212958093677207786, guid: 5de573169b807b546830630e0eeb419a,
+        type: 2}
+      propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4015072838400334, guid: 5de573169b807b546830630e0eeb419a, type: 2}
-      propertyPath: m_RootOrder
+    - target: {fileID: 212958093677207786, guid: 5de573169b807b546830630e0eeb419a,
+        type: 2}
+      propertyPath: m_Color.g
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1149451286214444, guid: 5de573169b807b546830630e0eeb419a, type: 2}
-      propertyPath: m_Name
-      value: HadesEnemyPrefab (1)
+    - target: {fileID: 212958093677207786, guid: 5de573169b807b546830630e0eeb419a,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 212958093677207786, guid: 5de573169b807b546830630e0eeb419a,
+        type: 2}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114479619375457156, guid: 5de573169b807b546830630e0eeb419a, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 5de573169b807b546830630e0eeb419a, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &916799336
@@ -319,12 +316,46 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4770480043208224, guid: 0daaae31f39dc6b4f80178c56f94bd30, type: 2}
       propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114647361198370450, guid: 0daaae31f39dc6b4f80178c56f94bd30,
+        type: 2}
+      propertyPath: hadesBulletPrefab
+      value: 
+      objectReference: {fileID: 1492695313628894, guid: eed44264e4850ba458e8526d094ef16e,
+        type: 2}
+    - target: {fileID: 114647361198370450, guid: 0daaae31f39dc6b4f80178c56f94bd30,
+        type: 2}
+      propertyPath: weaponSelected
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114647361198370450, guid: 0daaae31f39dc6b4f80178c56f94bd30,
+        type: 2}
+      propertyPath: zeusBulletPrefab
+      value: 
+      objectReference: {fileID: 1425170686608672, guid: aec1694464fee844a94e761be63c3c7e,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0daaae31f39dc6b4f80178c56f94bd30, type: 2}
   m_IsPrefabParent: 0
---- !u!1001 &1311146899
+--- !u!1 &1028138090 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1149451286214444, guid: 5de573169b807b546830630e0eeb419a,
+    type: 2}
+  m_PrefabInternal: {fileID: 348558327}
+--- !u!114 &1028138091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1028138090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81421e5c17aef73469516516c332864d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 1000
+--- !u!1001 &1145637331
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -333,11 +364,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4015072838400334, guid: 5de573169b807b546830630e0eeb419a, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 8.029086
+      value: 3.36
       objectReference: {fileID: 0}
     - target: {fileID: 4015072838400334, guid: 5de573169b807b546830630e0eeb419a, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1.0108743
+      value: -0.17
       objectReference: {fileID: 0}
     - target: {fileID: 4015072838400334, guid: 5de573169b807b546830630e0eeb419a, type: 2}
       propertyPath: m_LocalPosition.z
@@ -361,58 +392,72 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4015072838400334, guid: 5de573169b807b546830630e0eeb419a, type: 2}
       propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4015072838400334, guid: 5de573169b807b546830630e0eeb419a, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 5.926321
+      objectReference: {fileID: 0}
+    - target: {fileID: 4015072838400334, guid: 5de573169b807b546830630e0eeb419a, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 5.926321
+      objectReference: {fileID: 0}
+    - target: {fileID: 4015072838400334, guid: 5de573169b807b546830630e0eeb419a, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 5.926321
+      objectReference: {fileID: 0}
+    - target: {fileID: 114479619375457156, guid: 5de573169b807b546830630e0eeb419a,
+        type: 2}
+      propertyPath: hp
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114479619375457156, guid: 5de573169b807b546830630e0eeb419a,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 212958093677207786, guid: 5de573169b807b546830630e0eeb419a,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212958093677207786, guid: 5de573169b807b546830630e0eeb419a,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212958093677207786, guid: 5de573169b807b546830630e0eeb419a,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212958093677207786, guid: 5de573169b807b546830630e0eeb419a,
+        type: 2}
+      propertyPath: m_Color.a
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1149451286214444, guid: 5de573169b807b546830630e0eeb419a, type: 2}
       propertyPath: m_Name
-      value: HadesEnemyPrefab (2)
+      value: HadesEnemyPrefab (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114479619375457156, guid: 5de573169b807b546830630e0eeb419a, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 5de573169b807b546830630e0eeb419a, type: 2}
   m_IsPrefabParent: 0
---- !u!1001 &1365748544
-Prefab:
+--- !u!1 &1145637332 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1149451286214444, guid: 5de573169b807b546830630e0eeb419a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1145637331}
+--- !u!114 &1145637333
+MonoBehaviour:
   m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4015072838400334, guid: 5de573169b807b546830630e0eeb419a, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 8.002615
-      objectReference: {fileID: 0}
-    - target: {fileID: 4015072838400334, guid: 5de573169b807b546830630e0eeb419a, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -2.0432332
-      objectReference: {fileID: 0}
-    - target: {fileID: 4015072838400334, guid: 5de573169b807b546830630e0eeb419a, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4015072838400334, guid: 5de573169b807b546830630e0eeb419a, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4015072838400334, guid: 5de573169b807b546830630e0eeb419a, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4015072838400334, guid: 5de573169b807b546830630e0eeb419a, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4015072838400334, guid: 5de573169b807b546830630e0eeb419a, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4015072838400334, guid: 5de573169b807b546830630e0eeb419a, type: 2}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1149451286214444, guid: 5de573169b807b546830630e0eeb419a, type: 2}
-      propertyPath: m_Name
-      value: HadesEnemyPrefab (3)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 5de573169b807b546830630e0eeb419a, type: 2}
-  m_IsPrefabParent: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1145637332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81421e5c17aef73469516516c332864d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 5
