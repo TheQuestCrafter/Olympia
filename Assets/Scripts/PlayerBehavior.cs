@@ -40,7 +40,7 @@ public class PlayerBehavior : MonoBehaviour
         health = 3; // will normally start with 3 hp
         weaponSelected = 0; // default weapon selected
 
-        Vertical = true;
+        Vertical = false;
 
     }
 

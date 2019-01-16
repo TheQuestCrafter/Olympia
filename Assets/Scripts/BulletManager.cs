@@ -5,33 +5,20 @@ using UnityEngine;
 
 public class BulletManager : MonoBehaviour 
 {
-    private bool onFire;
-
-    IEnumerator FireDamage(float damageDuration, int damageCount, int damageAmount)
-    {
-        onFire = true;
-        int currentCount = 0;
-        while (currentCount < damageCount)
-        {
-          // damageAmount;
-            yield return new WaitForSeconds(damageDuration);
-            currentCount++;
-        }
-        onFire = false;
-    }
-
-
+    
     public float weaponDamage;
     public float fireRate; // time between firing
     float nextFire; // the time in-game when the player can fire again.
     public float bulletSpeed;
     public float bulletLife; // in seconds
-    public float zeusLargeBulletLife; // in seconds
+
+    int numberofProjectiles;
+    float radius, movespeed;
+
 
     public Transform bulletSpawn;
     public GameObject defaultBulletPrefab;
     public GameObject zeusBulletPrefab;
-    public GameObject zeusLargeBulletPrefab;
     public GameObject poseidonBulletPrefab;
     public GameObject hadesBulletPrefab;
 
@@ -42,7 +29,9 @@ public class BulletManager : MonoBehaviour
         fireRate = 0.2f;
         bulletSpeed = 500;
         bulletLife = 2.8f;
-        zeusLargeBulletLife = 2f;
+        radius = 5f;
+        movespeed = 5f;
+        numberofProjectiles = 3;
     }
 	
 	// Update is called once per frame
@@ -89,32 +78,34 @@ public class BulletManager : MonoBehaviour
                 break;
             case 1:
                 weaponDamage = 5f;
-                fireRate = 0.2f;
+                fireRate = 0.7f;
                 if (Time.time > nextFire)
                 {
-                    // Create the Bullet from the Bullet Prefab
-                    var bullet = (GameObject)Instantiate(
-                    zeusBulletPrefab,
-                    bulletSpawn.position,
-                    bulletSpawn.rotation);
+                  
 
-                    // *** nextFire = time right now + the constant cooldown of 0.3f seconds. AKA you're stating the next time you can fire is at that time or later, not earlier.
+                    float angleStep = 15f;
+                    float angle = 75f;
+
+                    for (int i = 0; i <= numberofProjectiles - 1; i++)
+                    {
+
+                        float projectileDirXposition = bulletSpawn.position.x + Mathf.Sin((angle * Mathf.PI) / 180) * radius;
+                        float projectileDirYposition = bulletSpawn.position.y + Mathf.Cos((angle * Mathf.PI) / 180) * radius;
+
+                        Vector3 projectileVector = new Vector3(projectileDirXposition, projectileDirYposition);
+                        Vector3 projectileMoveDirection = (projectileVector - bulletSpawn.position).normalized * movespeed;
+
+                        var proj = Instantiate(zeusBulletPrefab , bulletSpawn.position, Quaternion.identity);
+                        proj.GetComponent<Rigidbody2D>().velocity =
+                            new Vector2(projectileMoveDirection.x, projectileMoveDirection.y);
+
+                        angle += angleStep;
+                        Destroy(proj, bulletLife);
+                    }
+
                     nextFire = Time.time + fireRate;
 
-                    // Add velocity to the bullet
-                    if (vertical)
-                    {
-                        bullet.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 1) * bulletSpeed);
-                    }
-                    else
-                    {
-                        bullet.GetComponent<Rigidbody2D>().AddForce(new Vector2(1, 0) * bulletSpeed);
-                    }
 
-
-
-                    // Destroy the bullet after bulletLife seconds
-                    Destroy(bullet, bulletLife);
 
                 }
                 break;
@@ -185,16 +176,4 @@ public class BulletManager : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (this.gameObject.tag == "PlayerLightingBullet" && collision.gameObject.tag == "Enemy")
-        {
-            var largeBullet = (GameObject)Instantiate(zeusLargeBulletPrefab, this.transform);
-
-
-
-            Destroy(largeBullet, zeusLargeBulletLife);
-
-        }
-    }
 }
