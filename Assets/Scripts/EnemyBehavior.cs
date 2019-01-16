@@ -6,7 +6,7 @@ public class EnemyBehavior : MonoBehaviour
 {
     CircleCollider2D cc2D;
     GameObject player;
-    public int hp;
+    public float hp;
     Vector2 Direction;
     public float speed;
     bool lockedOn;
@@ -69,6 +69,12 @@ public class EnemyBehavior : MonoBehaviour
             Destroy(collision.gameObject);
             Destroy(this.gameObject);
             
+
+        }
+        if (collision.tag == "PlayerWaterBullet")
+        {
+            hp -= player.GetComponent<BulletManager>().weaponDamage;
+            Destroy(collision.gameObject);
 
         }
     }

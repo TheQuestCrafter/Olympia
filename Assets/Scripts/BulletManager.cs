@@ -21,7 +21,7 @@ public class BulletManager : MonoBehaviour
     }
 
 
-    public int weaponDamage;
+    public float weaponDamage;
     public float fireRate; // time between firing
     float nextFire; // the time in-game when the player can fire again.
     public float bulletSpeed;
@@ -38,7 +38,7 @@ public class BulletManager : MonoBehaviour
     // Use this for initialization
     void Awake ()
     {
-        weaponDamage = 5;
+        weaponDamage = 5f;
         fireRate = 0.2f;
         bulletSpeed = 500;
         bulletLife = 2.8f;
@@ -51,12 +51,12 @@ public class BulletManager : MonoBehaviour
 		
 	}
 
-    public void Fire(int weapon)
+    public void Fire(int weapon, bool vertical)
     {
         switch (weapon)
         {
             case 0:
-                weaponDamage = 5;
+                weaponDamage = 5f;
                 fireRate = 0.2f;
                 if (Time.time > nextFire)
                 {
@@ -70,7 +70,17 @@ public class BulletManager : MonoBehaviour
                     nextFire = Time.time + fireRate;
 
                     // Add velocity to the bullet
-                    bullet.GetComponent<Rigidbody2D>().AddForce(new Vector2(1, 0) * bulletSpeed);
+
+                    if(vertical)
+                    {
+                        bullet.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 1) * bulletSpeed);
+                    }
+                    else
+                    {
+                        bullet.GetComponent<Rigidbody2D>().AddForce(new Vector2(1, 0) * bulletSpeed);
+                    }
+
+                    
 
 
                     // Destroy the bullet after bulletLife seconds
@@ -78,7 +88,7 @@ public class BulletManager : MonoBehaviour
                 }
                 break;
             case 1:
-                weaponDamage = 5;
+                weaponDamage = 5f;
                 fireRate = 0.2f;
                 if (Time.time > nextFire)
                 {
@@ -92,7 +102,15 @@ public class BulletManager : MonoBehaviour
                     nextFire = Time.time + fireRate;
 
                     // Add velocity to the bullet
-                    bullet.GetComponent<Rigidbody2D>().AddForce(new Vector2(1, 0) * bulletSpeed);
+                    if (vertical)
+                    {
+                        bullet.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 1) * bulletSpeed);
+                    }
+                    else
+                    {
+                        bullet.GetComponent<Rigidbody2D>().AddForce(new Vector2(1, 0) * bulletSpeed);
+                    }
+
 
 
                     // Destroy the bullet after bulletLife seconds
@@ -101,7 +119,7 @@ public class BulletManager : MonoBehaviour
                 }
                 break;
             case 2:
-                weaponDamage = 1;
+                weaponDamage = 0.2f;
                 fireRate = 0.01f;
                 if (Time.time > nextFire)
                 {
@@ -115,7 +133,14 @@ public class BulletManager : MonoBehaviour
                     nextFire = Time.time + fireRate;
 
                     // Add velocity to the bullet
-                    bullet.GetComponent<Rigidbody2D>().AddForce(new Vector2(1, 0) * bulletSpeed);
+                    if (vertical)
+                    {
+                        bullet.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 1) * bulletSpeed);
+                    }
+                    else
+                    {
+                        bullet.GetComponent<Rigidbody2D>().AddForce(new Vector2(1, 0) * bulletSpeed);
+                    }
 
 
                     // Destroy the bullet after bulletLife seconds
@@ -124,7 +149,7 @@ public class BulletManager : MonoBehaviour
                 }
                 break;
             case 3:
-                weaponDamage = 5;
+                weaponDamage = 5f;
                 fireRate = 0.2f;
                 if (Time.time > nextFire)
                 {
@@ -138,9 +163,17 @@ public class BulletManager : MonoBehaviour
                     nextFire = Time.time + fireRate;
 
                     // Add velocity to the bullet
-                    bullet.GetComponent<Rigidbody2D>().AddForce(new Vector2(1, 0) * bulletSpeed);
+                    if (vertical)
+                    {
+                        bullet.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 1) * bulletSpeed);
+                    }
+                    else
+                    {
+                        bullet.GetComponent<Rigidbody2D>().AddForce(new Vector2(1, 0) * bulletSpeed);
+                    }
 
-                    
+
+
 
                     // Destroy the bullet after bulletLife seconds
                     Destroy(bullet, bulletLife);

@@ -9,76 +9,47 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1056856107947680}
+  m_RootGameObject: {fileID: 1211149158451806}
   m_IsPrefabParent: 1
---- !u!1 &1056856107947680
+--- !u!1 &1211149158451806
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4770480043208224}
-  - component: {fileID: 50903959066119440}
-  - component: {fileID: 61663822726789176}
-  - component: {fileID: 212083373081042702}
-  - component: {fileID: 114647361198370450}
+  - component: {fileID: 4905210256111012}
+  - component: {fileID: 212359081259158470}
+  - component: {fileID: 61156756902807048}
+  - component: {fileID: 50315080325020622}
+  - component: {fileID: 114710802565507614}
   m_Layer: 0
-  m_Name: PlayerPrefab
-  m_TagString: Player
+  m_Name: HadesLavaWavePrefab
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1447819588598050
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4443867941379236}
-  m_Layer: 0
-  m_Name: PlayerGun
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4443867941379236
+--- !u!4 &4905210256111012
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1447819588598050}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.081, y: -0.002, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4770480043208224}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4770480043208224
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1056856107947680}
+  m_GameObject: {fileID: 1211149158451806}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.85, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 5}
-  m_Children:
-  - {fileID: 4443867941379236}
+  m_LocalPosition: {x: 0.27, y: -1.33, z: 0}
+  m_LocalScale: {x: 30, y: 8, z: 1}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50903959066119440
+--- !u!50 &50315080325020622
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1056856107947680}
+  m_GameObject: {fileID: 1211149158451806}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -92,64 +63,48 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &61663822726789176
+--- !u!61 &61156756902807048
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1056856107947680}
+  m_GameObject: {fileID: 1211149158451806}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0021312274, y: 0.0010656714}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.16, y: 0.22}
-    newSize: {x: 5.34, y: 5.36}
+    oldSize: {x: 0.64, y: 0.32}
+    newSize: {x: 0.64, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.15974808, y: 0.21850389}
+  m_Size: {x: 0.64, y: 0.32}
   m_EdgeRadius: 0
---- !u!114 &114647361198370450
+--- !u!114 &114710802565507614
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1056856107947680}
+  m_GameObject: {fileID: 1211149158451806}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56aee74d7cf43c64a9520182421fb147, type: 3}
+  m_Script: {fileID: 11500000, guid: 06e6807cacdb0eb4ba779576c5152fc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  moveHorizontal: 0
-  moveVertical: 0
-  invulnerabilityOn: 0
-  invulnerabilityDuration: 0
-  invulnerabilityOffTime: 0
-  health: 0
-  fireRate: 0
-  bulletSpeed: 0
-  bulletLife: 0
-  bulletSpawn: {fileID: 4443867941379236}
-  defaultBulletPrefab: {fileID: 1487661994391046, guid: 4281b0ff7d4b5754d80d920ffa74fdaf,
-    type: 2}
-  zeusBulletPrefab: {fileID: 0}
-  poseidonBulletPrefab: {fileID: 0}
-  hadesBulletPrefab: {fileID: 0}
---- !u!212 &212083373081042702
+--- !u!212 &212359081259158470
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1056856107947680}
+  m_GameObject: {fileID: 1211149158451806}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -179,12 +134,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1ecc55657eec91745919e7abf626eb7f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3396763f6813c7642a98327a1f9a6e0f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5.34, y: 5.36}
+  m_Size: {x: 0.64, y: 0.32}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

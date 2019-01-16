@@ -6,7 +6,7 @@ public class BossScriptTest : MonoBehaviour
 {
     private bool onFire;
 
-    IEnumerator FireDamage(float damageDuration, int damageCount, int damageAmount)
+    IEnumerator FireDamage(float damageDuration, int damageCount, float damageAmount)
     {
         onFire = true;
         int currentCount = 0;
@@ -20,10 +20,11 @@ public class BossScriptTest : MonoBehaviour
     }
     
 
-    CircleCollider2D cc2D;
+   // CircleCollider2D cc2D;
+    PolygonCollider2D pc2D;
     GameObject player;
     GameObject bullet;
-    public int hp;
+    public float hp;
 
     // Use this for initialization
     void Awake ()
@@ -34,13 +35,14 @@ public class BossScriptTest : MonoBehaviour
             this.player = temp.gameObject;
         }
 
-        cc2D = GetComponent<CircleCollider2D>();
+        //cc2D = GetComponent<CircleCollider2D>();
+        pc2D = GetComponent<PolygonCollider2D>();
     }
 	
 	// Update is called once per frame
 	void FixedUpdate ()
     {
-        if (hp < 0)
+        if (hp < 0f)
         {
             Destroy(this.gameObject);
         }
@@ -59,10 +61,15 @@ public class BossScriptTest : MonoBehaviour
         {
             hp -= player.GetComponent<BulletManager>().weaponDamage;
             Destroy(collision.gameObject);
-            StartCoroutine(FireDamage(1f, 5, 1));
+            StartCoroutine(FireDamage(1f, 5, 1f));
 
         }
+        if (collision.tag == "PlayerWaterBullet")
+        {
+            hp -= player.GetComponent<BulletManager>().weaponDamage;
+            Destroy(collision.gameObject);
 
+        }
     }
 
 }
