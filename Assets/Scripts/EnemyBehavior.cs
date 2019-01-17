@@ -22,7 +22,7 @@ public class EnemyBehavior : MonoBehaviour
 
         cc2D = GetComponent<CircleCollider2D>();
         lockedOn = false;
-        speed = 0f;
+        speed = 0.1f;
         
     }
 	
@@ -31,7 +31,7 @@ public class EnemyBehavior : MonoBehaviour
     {
 		if((cc2D.transform.position.x != player.transform.position.x) && !lockedOn)
         {
-            if(cc2D.transform.position.x < -3)
+            if(cc2D.transform.position.x < 0)
             {
                 lockedOn = true;
             }
@@ -75,19 +75,19 @@ public class EnemyBehavior : MonoBehaviour
         {
             hp -= player.GetComponent<BulletManager>().weaponDamage;
             Destroy(collision.gameObject);
-
+            Destroy(this.gameObject);
         }
         if (collision.tag == "PlayerFireBullet")
         {
             hp -= player.GetComponent<BulletManager>().weaponDamage;
             Destroy(collision.gameObject);
-
+            Destroy(this.gameObject);
         }
         if (collision.tag == "PlayerLightingBullet")
         {
             hp -= player.GetComponent<BulletManager>().weaponDamage;
             Destroy(collision.gameObject);
-
+            Destroy(this.gameObject);
         }
     }
 
