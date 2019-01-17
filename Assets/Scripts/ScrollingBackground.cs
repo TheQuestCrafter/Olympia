@@ -16,7 +16,7 @@ public class ScrollingBackground : MonoBehaviour {
 	void Update () {
         transform.Translate((new Vector3(-1, 0, 0)) * speed * Time.deltaTime);
 
-        if (transform.position.x < -6.4)
+        if (transform.position.x < -(3.2 * 7)) //multiple child's x offest by parent's scale
         {
             transform.position = startPOS;
         }
