@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 58896191269655608}
   - component: {fileID: 212761302475126072}
   m_Layer: 0
-  m_Name: HadesFireballPrefab
+  m_Name: HadesFireballPrefab 1
   m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
