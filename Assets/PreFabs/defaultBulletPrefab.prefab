@@ -36,8 +36,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1487661994391046}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -4.975, y: -2.192, z: 0}
+  m_LocalScale: {x: 1.8556911, y: 1.8556911, z: 1.8556911}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -74,9 +74,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.007651627, y: 0}
+  m_Offset: {x: 0.0013535334, y: 0}
   serializedVersion: 2
-  m_Radius: 0.11487049
+  m_Radius: 0.04019191
 --- !u!212 &212072607322822420
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -111,13 +111,13 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5ae8079b14e8cad44a01ec17213d4379, type: 3}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: 087598649e6a8364481129e71b8433bf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.25, y: 0.24}
+  m_Size: {x: 0.08, y: 0.08}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

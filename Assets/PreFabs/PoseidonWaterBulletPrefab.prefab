@@ -9,46 +9,47 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1361998839887654}
+  m_RootGameObject: {fileID: 1880105453387332}
   m_IsPrefabParent: 1
---- !u!1 &1361998839887654
+--- !u!1 &1880105453387332
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4827527622256584}
-  - component: {fileID: 212047540991850646}
-  - component: {fileID: 61782008951435354}
-  - component: {fileID: 50952937715071830}
+  - component: {fileID: 4192844272581176}
+  - component: {fileID: 212315255307565214}
+  - component: {fileID: 61844534287314108}
+  - component: {fileID: 50237660686043958}
+  - component: {fileID: 114136078664444084}
   m_Layer: 0
-  m_Name: Water Beam - Olympia
-  m_TagString: PlayerWaterBullet
+  m_Name: PoseidonWaterBulletPrefab
+  m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4827527622256584
+--- !u!4 &4192844272581176
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1361998839887654}
-  m_LocalRotation: {x: -0, y: -0, z: 0.7071042, w: 0.7071094}
-  m_LocalPosition: {x: -8.713, y: -0.022, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_GameObject: {fileID: 1880105453387332}
+  m_LocalRotation: {x: -0.033110674, y: -0, z: 0.99945176, w: 0}
+  m_LocalPosition: {x: -3.14, y: -1.89, z: 0}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90.00001}
---- !u!50 &50952937715071830
+  m_LocalEulerAnglesHint: {x: 0, y: -3.795, z: 180.00002}
+--- !u!50 &50237660686043958
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1361998839887654}
+  m_GameObject: {fileID: 1880105453387332}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -62,12 +63,12 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &61782008951435354
+--- !u!61 &61844534287314108
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1361998839887654}
+  m_GameObject: {fileID: 1880105453387332}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -87,12 +88,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.16}
   m_EdgeRadius: 0
---- !u!212 &212047540991850646
+--- !u!114 &114136078664444084
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1880105453387332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9681025c39a05b4c96e02d9f21e617a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!212 &212315255307565214
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1361998839887654}
+  m_GameObject: {fileID: 1880105453387332}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0

@@ -70,6 +70,12 @@ public class BossScriptTest : MonoBehaviour
             Destroy(collision.gameObject);
 
         }
+        if (collision.tag == "PlayerLightingBullet")
+        {
+            hp -= player.GetComponent<BulletManager>().weaponDamage;
+            Destroy(collision.gameObject);
+
+        }
     }
 
 }

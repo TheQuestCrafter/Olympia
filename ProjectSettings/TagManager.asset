@@ -11,6 +11,9 @@ TagManager:
   - EnemySpawner
   - PlayerWaterBullet
   - EnemyBullet
+  - BottomWall
+  - RightTentacle
+  - LeftTentacle
   layers:
   - Default
   - TransparentFX
@@ -20,12 +23,12 @@ TagManager:
   - UI
   - 
   - 
-  - Projectiles
-  - 
-  - 
-  - 
-  - 
-  - 
+  - PlayerProjectiles
+  - Backgrounds
+  - Enemies
+  - EnemyProjectiles
+  - Bubble
+  - Player
   - 
   - 
   - 
@@ -47,4 +50,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Bubble
+    uniqueID: 1159140631
     locked: 0

@@ -77,6 +77,18 @@ public class EnemyBehavior : MonoBehaviour
             Destroy(collision.gameObject);
 
         }
+        if (collision.tag == "PlayerFireBullet")
+        {
+            hp -= player.GetComponent<BulletManager>().weaponDamage;
+            Destroy(collision.gameObject);
+
+        }
+        if (collision.tag == "PlayerLightingBullet")
+        {
+            hp -= player.GetComponent<BulletManager>().weaponDamage;
+            Destroy(collision.gameObject);
+
+        }
     }
 
 

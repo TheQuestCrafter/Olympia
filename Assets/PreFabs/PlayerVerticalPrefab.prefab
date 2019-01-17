@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 50412084521778258}
   - component: {fileID: 114122485604426036}
   - component: {fileID: 114074031201153664}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: PlayerVerticalPrefab
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4305414446379070}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: PlayerGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,7 +53,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1459469443328400}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0.05, y: -4.24, z: 0}
+  m_LocalPosition: {x: 0.02, y: -4.17, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 4305414446379070}
@@ -150,13 +150,10 @@ MonoBehaviour:
   fireRate: 0
   bulletSpeed: 0
   bulletLife: 0
-  zeusLargeBulletLife: 0
   bulletSpawn: {fileID: 4305414446379070}
   defaultBulletPrefab: {fileID: 1487661994391046, guid: 4281b0ff7d4b5754d80d920ffa74fdaf,
     type: 2}
   zeusBulletPrefab: {fileID: 1425170686608672, guid: aec1694464fee844a94e761be63c3c7e,
-    type: 2}
-  zeusLargeBulletPrefab: {fileID: 1093965648628734, guid: 2d83cc0106ec8ec448ecbc5f90c69b3e,
     type: 2}
   poseidonBulletPrefab: {fileID: 1139485711275316, guid: 1895a05a53736ca41ad921ae3ceaf3da,
     type: 2}
@@ -176,6 +173,7 @@ MonoBehaviour:
   speed: 0
   moveHorizontal: 0
   moveVertical: 0
+  Vertical: 1
   invulnerabilityOn: 0
   invulnerabilityDuration: 0
   invulnerabilityOffTime: 0
@@ -215,7 +213,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 1ecc55657eec91745919e7abf626eb7f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

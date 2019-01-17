@@ -12,7 +12,7 @@ public class PlayerBehavior : MonoBehaviour
     public float moveHorizontal, moveVertical;
     Vector2 Direction; // made with moveHor and moveVer
 
-    bool Vertical;
+    public bool Vertical;
 
     public bool invulnerabilityOn;
     public float invulnerabilityDuration;
@@ -40,7 +40,7 @@ public class PlayerBehavior : MonoBehaviour
         health = 3; // will normally start with 3 hp
         weaponSelected = 0; // default weapon selected
 
-        Vertical = true;
+      
 
     }
 
@@ -128,6 +128,7 @@ public class PlayerBehavior : MonoBehaviour
         {
             health--;
             Destroy(collision.gameObject);
+            TurnOnInvuln();
         }
     }
     private void Fire()
