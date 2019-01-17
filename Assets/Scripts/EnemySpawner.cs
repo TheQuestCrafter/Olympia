@@ -26,7 +26,6 @@ public class EnemySpawner : MonoBehaviour
 
     void Awake ()
     {
-        levelDuration = 10f;
         EnemyChoice = 2;
         upperSpawnHeightLimit = 4.85f;
         lowerSpawnHeightLimit = -4.85f;
