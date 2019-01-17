@@ -2,15 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// will be used to keep state of tentacles so that they can act appropriately
+public enum TentacleState { Stop, Attack, Reset } 
+
 public class PoseidonScript : MonoBehaviour
 {
-
-
-
     GameObject player;
     public GameObject BubblePrefab;
     public GameObject WaterBeam;
+
     public GameObject RightTentacle, LeftTentacle;
+    TentacleState RTentacleState, LTentacleState; // The current state of the tentacles
+    public float RTentacleNF, LTentacleNF; // Tentacle next fires for time.
+    public float RTentacleFR, LTentacleFR; // Tentacle fire rate, how fast it attacks with the tentacles
+
     PolygonCollider2D pc2D;
     public Transform poseidonGun;
     float Speed;
@@ -32,6 +37,13 @@ public class PoseidonScript : MonoBehaviour
         }
         FireRateBubble = 2f;
         NextFireBubble = Time.time + FireRateBubble;
+
+        LTentacleState = RTentacleState = TentacleState.Stop;
+        RTentacleFR = 7.1f;
+        LTentacleFR = 11.3f;
+        RTentacleNF = Time.time + RTentacleFR;
+        LTentacleNF = Time.time + LTentacleFR;
+
         FireRateLaser = 0.01f;
         NextFireLaser = Time.time + FireRateLaser;
         rand = new System.Random();
@@ -53,7 +65,44 @@ public class PoseidonScript : MonoBehaviour
         if (Time.time > 10)
             Attack3();
 
+        if(Time.time > RTentacleNF)
+        {
+            RTentacleState = TentacleState.Attack;
+        }
+        if(Time.time > LTentacleNF)
+        {
+            LTentacleState = TentacleState.Attack;
+        }
 
+        determineTentacleStateAction(RTentacleState, true);
+        determineTentacleStateAction(LTentacleState, false);
+    }
+
+    void determineTentacleStateAction(TentacleState tentacleState, bool right) // right is the right tentacle
+    {
+        switch(tentacleState)
+        {
+            case TentacleState.Stop:
+                {
+                    break;
+                }
+            case TentacleState.Attack:
+                {
+                    if(right)
+                    {
+                        //RightTentacle.transform.Rotate(;
+                    }
+                    else
+                    {
+                        LeftTentacle.transform.Rotate(Direction * Speed);
+                    }
+                    break;
+                }
+            case TentacleState.Reset:
+                {
+                    break;
+                }
+        }
     }
 
     void Attack1()
