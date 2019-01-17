@@ -11,6 +11,51 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1983883503464560}
   m_IsPrefabParent: 1
+--- !u!1 &1006715072517066
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4439789332771112}
+  m_Layer: 0
+  m_Name: LHGun
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1027198397496796
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4520798917904432}
+  m_Layer: 0
+  m_Name: ZeusGun
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1106638281866252
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4372405352069650}
+  m_Layer: 0
+  m_Name: RHGun
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1509983037699096
 GameObject:
   m_ObjectHideFlags: 0
@@ -21,6 +66,7 @@ GameObject:
   - component: {fileID: 4378570397997010}
   - component: {fileID: 212322558434618640}
   - component: {fileID: 60284103260232418}
+  - component: {fileID: 114498734455908022}
   m_Layer: 0
   m_Name: Zeus Left Hand
   m_TagString: Untagged
@@ -38,6 +84,7 @@ GameObject:
   - component: {fileID: 4496494956340004}
   - component: {fileID: 212578147424332818}
   - component: {fileID: 60680473138413858}
+  - component: {fileID: 114090413697982058}
   m_Layer: 0
   m_Name: Zeus Right Hand
   m_TagString: Untagged
@@ -57,6 +104,7 @@ GameObject:
   - component: {fileID: 95125252717531588}
   - component: {fileID: 60489488020123636}
   - component: {fileID: 114131581223390636}
+  - component: {fileID: 114946935465577128}
   m_Layer: 0
   m_Name: Zeus Head1
   m_TagString: Untagged
@@ -88,8 +136,22 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.446, y: 0.065, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4520798917904432}
   m_Father: {fileID: 4917704627879794}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4372405352069650
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1106638281866252}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.157, y: 0.053, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4496494956340004}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4378570397997010
@@ -99,11 +161,25 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1509983037699096}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.208, y: 0.589, z: 0}
+  m_LocalPosition: {x: 0.228, y: -0.449, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4439789332771112}
   m_Father: {fileID: 4917704627879794}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4439789332771112
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1006715072517066}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.155, y: 0.052, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4378570397997010}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4496494956340004
 Transform:
@@ -112,11 +188,25 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1620915259138708}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.168, y: -0.471, z: 0}
+  m_LocalPosition: {x: 0.199, y: 0.572, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4372405352069650}
   m_Father: {fileID: 4917704627879794}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4520798917904432
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1027198397496796}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.255, y: 0.065, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4112875622833498}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4917704627879794
 Transform:
@@ -125,7 +215,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1983883503464560}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.31, y: -0.43, z: 0}
+  m_LocalPosition: {x: 3.16, y: -0.46, z: 0}
   m_LocalScale: {x: 6.5, y: 6.5, z: 6}
   m_Children:
   - {fileID: 4112875622833498}
@@ -312,6 +402,23 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114090413697982058
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1620915259138708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ce63165b1a820140b59d3655e7e5a9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunLocation: {fileID: 4372405352069650}
+  bulletPrefab: {fileID: 1540295101897834, guid: fc02191de4c22e0419d1313d522a3e98,
+    type: 2}
+  fireRate: 0
+  bulletSpeed: 0
+  bulletLife: 0
 --- !u!114 &114131581223390636
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -324,6 +431,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 1000
+--- !u!114 &114498734455908022
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1509983037699096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ce63165b1a820140b59d3655e7e5a9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunLocation: {fileID: 4439789332771112}
+  bulletPrefab: {fileID: 1540295101897834, guid: fc02191de4c22e0419d1313d522a3e98,
+    type: 2}
+  fireRate: 0
+  bulletSpeed: 0
+  bulletLife: 0
+--- !u!114 &114946935465577128
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1875144618224744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f16e5690b7bfcb4a9ef290cfc3a3752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LBullet: {fileID: 1055352184661876, guid: fcf6d17384090564b9734a2d9404b0e0, type: 2}
+  zeusGun: {fileID: 4520798917904432}
 --- !u!212 &212322558434618640
 SpriteRenderer:
   m_ObjectHideFlags: 1
