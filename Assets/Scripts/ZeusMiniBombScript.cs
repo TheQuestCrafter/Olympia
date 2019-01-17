@@ -6,19 +6,22 @@ public class ZeusMiniBombScript : MonoBehaviour
 {
 
     public GameObject Bomb;
-    System.Random rand;
-    float TimeTillBoom;
+   
+    public float TimeTillBoom;
     Rigidbody2D rb2D;
-	// Use this for initialization
-	void Start ()
+
+    System.Random rand = new System.Random();
+    public float temp, temp2;
+    // Use this for initialization
+    void Start ()
     {
+        temp = (float)rand.NextDouble();
+        temp2 = (float)rand.NextDouble();
 
-        rand = new System.Random();
-        float temp = (float)rand.NextDouble();
         rb2D = GetComponent<Rigidbody2D>();
-        TimeTillBoom = Time.time + 7f + temp;
 
 
+        SpawnOrb();
        
     }
 	
@@ -32,4 +35,12 @@ public class ZeusMiniBombScript : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
+    void SpawnOrb()
+    {
+        TimeTillBoom = Time.time + temp + temp2;
+    }
 }
+
+
+

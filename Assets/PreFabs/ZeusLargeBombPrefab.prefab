@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212905690840958686}
   - component: {fileID: 58374898866966090}
   - component: {fileID: 50034197517304348}
+  - component: {fileID: 114325090143384298}
   m_Layer: 0
   m_Name: ZeusLargeBombPrefab
   m_TagString: Untagged
@@ -77,6 +78,17 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.24
+--- !u!114 &114325090143384298
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1409796549802122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ae959aea72ba96499a6441a5324e457, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212905690840958686
 SpriteRenderer:
   m_ObjectHideFlags: 1

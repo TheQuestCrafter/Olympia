@@ -416,6 +416,7 @@ MonoBehaviour:
   gunLocation: {fileID: 4372405352069650}
   bulletPrefab: {fileID: 1540295101897834, guid: fc02191de4c22e0419d1313d522a3e98,
     type: 2}
+  Bomb: {fileID: 1409796549802122, guid: b4dbdad7da1c3a04793b20b0012ecdb7, type: 2}
   fireRate: 0
   bulletSpeed: 0
   bulletLife: 0
@@ -445,6 +446,7 @@ MonoBehaviour:
   gunLocation: {fileID: 4439789332771112}
   bulletPrefab: {fileID: 1540295101897834, guid: fc02191de4c22e0419d1313d522a3e98,
     type: 2}
+  Bomb: {fileID: 1409796549802122, guid: b4dbdad7da1c3a04793b20b0012ecdb7, type: 2}
   fireRate: 0
   bulletSpeed: 0
   bulletLife: 0
