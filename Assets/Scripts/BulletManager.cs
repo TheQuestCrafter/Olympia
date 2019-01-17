@@ -78,7 +78,7 @@ public class BulletManager : MonoBehaviour
                 break;
             case 1:
                 weaponDamage = 5f;
-                fireRate = 0.7f;
+                fireRate = 0.55f;
                 if (Time.time > nextFire)
                 {
                     if (vertical)
@@ -136,7 +136,7 @@ public class BulletManager : MonoBehaviour
                
                 break;
             case 2:
-                weaponDamage = 0.2f;
+                weaponDamage = 0.42f;
                 fireRate = 0.01f;
                 if (Time.time > nextFire)
                 {
@@ -166,8 +166,8 @@ public class BulletManager : MonoBehaviour
                 }
                 break;
             case 3:
-                weaponDamage = 5f;
-                fireRate = 0.2f;
+                weaponDamage = 3f;
+                fireRate = 0.3f;
                 if (Time.time > nextFire)
                 {
                     // Create the Bullet from the Bullet Prefab
