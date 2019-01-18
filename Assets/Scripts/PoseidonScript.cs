@@ -12,8 +12,9 @@ public class PoseidonScript : MonoBehaviour
     public GameObject WaterBeam;
 
     public GameObject RightTentacle, LeftTentacle;
+    Rigidbody2D RTentacleRB2D, LTentacleRB2D;
     Vector3 RTentacleShoulder, LTentacleShoulder;
-    TentacleState RTentacleState, LTentacleState; // The current state of the tentacles
+    public TentacleState RTentacleState, LTentacleState; // The current state of the tentacles
     public float RTentacleNF, LTentacleNF; // Tentacle next fires for time.
     bool RTentacleReady, LTentacleReady;
     public float RTentacleFR, LTentacleFR; // Tentacle fire rate, how fast it attacks with the tentacles
@@ -32,6 +33,8 @@ public class PoseidonScript : MonoBehaviour
     // Use this for initialization
     void Awake()
     {
+        RTentacleRB2D = RightTentacle.GetComponent<Rigidbody2D>();
+        LTentacleRB2D = LeftTentacle.GetComponent<Rigidbody2D>();
         if (this.player == null)
         {
             PlayerBehavior temp = FindObjectOfType<PlayerBehavior>();
@@ -54,8 +57,8 @@ public class PoseidonScript : MonoBehaviour
         NextFireLaser = Time.time + FireRateLaser;
         rand = new System.Random();
         Speed = 3f;
-        startAngle = currentAngle = 220;
-        endAngle = 140; 
+        startAngle = currentAngle = 260;
+        endAngle = 100; 
         Direction = new Vector3(0, 0, 1);
         pc2D = GetComponent<PolygonCollider2D>();
 
@@ -72,11 +75,15 @@ public class PoseidonScript : MonoBehaviour
         if (Time.time > 10)
             Attack3();
 
-        if(Time.time > RTentacleNF)
+        if(RTentacleReady && Time.time > RTentacleNF)
         {
             RTentacleState = TentacleState.Attack;
         }
-        if(Time.time > LTentacleNF)
+        else if(!RTentacleReady && Time.time > RTentacleNF && RTentacleState == TentacleState.Stop)
+        {
+            RTentacleState = TentacleState.Reset;
+        }
+        if(LTentacleReady && Time.time > LTentacleNF)
         {
             LTentacleState = TentacleState.Attack;
         }
@@ -87,23 +94,34 @@ public class PoseidonScript : MonoBehaviour
 
     void determineTentacleStateAction(TentacleState tentacleState, bool right) // right is the right tentacle
     {
-        switch(tentacleState)
+        if (RightTentacle.transform.rotation.z <= -60)
+        {
+            RTentacleState = TentacleState.Stop;
+            RTentacleNF = Time.time + RTentacleFR;
+            RTentacleReady = false;
+        }
+        switch (tentacleState)
         {
             case TentacleState.Stop:
                 {
                     // Tentacle doesn't move. Can be at either end point
+                    if(right && !RTentacleReady)
+                    {
+                        RightTentacle.transform.Rotate(new Vector3(0, 0, -60f));
+                    }
+                   
                     break;
                 }
             case TentacleState.Attack:
                 {
                     if(right)
                     {
-                        RightTentacle.transform.Rotate(RTentacleShoulder, -Direction.x * Speed);
-                        if(RightTentacle.transform.rotation.z <= -60)
-                        {
-                            RTentacleState = TentacleState.Stop;
-                            RTentacleReady = false;
-                        }
+                        //RightTentacle.transform.Rotate()
+                        //RightTentacle.transform.Rotate(RightTentacle.transform.right, -Direction.x * Speed);
+                        //RTentacleRB2D.transform.Rotate(RightTentacle.transform.right, -Direction.x * Speed);
+
+                        RightTentacle.transform.Rotate(Vector3.forward * -Speed);
+                        
                     }
                     else
                     {
@@ -193,6 +211,7 @@ public class PoseidonScript : MonoBehaviour
             proj.GetComponent<Rigidbody2D>().velocity =
                 new Vector2(projectileMoveDirection.x, projectileMoveDirection.y);
 
+            // We should alter this time for balancing later
             NextFireBubble = Time.time + FireRateBubble + 20;
 
             Destroy(proj, 7);
