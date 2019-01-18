@@ -361,7 +361,7 @@ MonoBehaviour:
   EnemyChoice: 0
   upperSpawnHeightLimit: 0
   lowerSpawnHeightLimit: 0
-  spawnTime: 0
+  spawnTime: 0.3
   levelDuration: 45
 --- !u!4 &2021453779
 Transform:
