@@ -136,6 +136,12 @@ MonoBehaviour:
   WaterBeam: {fileID: 1880105453387332, guid: d866be6e38adad7438a5bbb1a9298909, type: 2}
   RightTentacle: {fileID: 0}
   LeftTentacle: {fileID: 0}
+  RTentacleState: 0
+  LTentacleState: 0
+  RTentacleNF: 0
+  LTentacleNF: 0
+  RTentacleFR: 0
+  LTentacleFR: 0
   poseidonGun: {fileID: 4369614902135786}
 --- !u!114 &114797802729157122
 MonoBehaviour:
@@ -149,6 +155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 1000
+  explosionEffect: {fileID: 0}
 --- !u!212 &212206713410603962
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -184,7 +191,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: dd8a09b82b789a54f9d7860b715346ae, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 874bc86fb6122cc499e6d85bbe2e3d69, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
