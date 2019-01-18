@@ -29,7 +29,6 @@ public class EnemySpawner : MonoBehaviour
         EnemyChoice = 2;
         upperSpawnHeightLimit = 4.85f;
         lowerSpawnHeightLimit = -4.85f;
-        spawnTime = 0.75f;
         rnd = new System.Random();
     }
 
