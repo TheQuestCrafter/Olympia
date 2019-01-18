@@ -3,6 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class Boundary
+{
+    public float xMin, xMax, yMin, yMax;
+}
 public class PlayerBehavior : MonoBehaviour
 {
     Rigidbody2D rb2D;
@@ -21,7 +26,7 @@ public class PlayerBehavior : MonoBehaviour
     public int weaponSelected;
 
     BulletManager BM;
-
+    public Boundary boundary;
     public bool[] Weapons = new bool[5] { true, false, false, false, false };
 
     // Use this for initialization
@@ -67,8 +72,20 @@ public class PlayerBehavior : MonoBehaviour
         if(health == 0)
         {
             Destroy(this.gameObject);
+            Respawn();
         }
 
+        rb2D.position = new Vector2
+        (
+            Mathf.Clamp(rb2D.position.x, boundary.xMin, boundary.xMax),
+            Mathf.Clamp(rb2D.position.y, boundary.yMin, boundary.yMax)
+        );
+
+    }
+
+    private void Respawn()
+    {
+       
     }
 
     private void SwitchWeapons()
@@ -109,6 +126,9 @@ public class PlayerBehavior : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         TurnOnInvuln();
+
+
+        
     }
 
     public void TurnOnInvuln()

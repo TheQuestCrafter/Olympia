@@ -53,7 +53,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1021657035940950}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.08, y: -2.11, z: 0}
+  m_LocalPosition: {x: -6.84, y: -0.01, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 4872342094279506}
@@ -181,6 +181,11 @@ MonoBehaviour:
   invulnerabilityOffTime: 0
   health: 0
   weaponSelected: 0
+  boundary:
+    xMin: -7.1
+    xMax: 6.98
+    yMin: -4.32
+    yMax: 4.32
   Weapons: 0100000000
 --- !u!212 &212813229466694202
 SpriteRenderer:

@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4450577986492746}
   m_Layer: 0
-  m_Name: Chronos
+  m_Name: ChronosHorizontal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38,8 +38,39 @@ GameObject:
   - component: {fileID: 95356695405123044}
   - component: {fileID: 60294378448551850}
   - component: {fileID: 114693778408700114}
+  - component: {fileID: 114254686882261498}
   m_Layer: 0
   m_Name: Chronos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1363122412770330
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4339428306151774}
+  m_Layer: 0
+  m_Name: TorchFire1Location
+  m_TagString: Enemy
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1701517240855206
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4577921297095668}
+  m_Layer: 0
+  m_Name: ChronosGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62,22 +93,53 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
+--- !u!1 &1961440103426454
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4986523043957412}
+  m_Layer: 0
+  m_Name: TorchFire2Location
+  m_TagString: Enemy
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4339428306151774
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1363122412770330}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.6250001, y: -0.025000095, z: 0.0026041665}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4450577986492746}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!4 &4450577986492746
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1051013427814544}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.7055488, y: 1.1040183, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 5.62, y: -0.05, z: 0}
   m_LocalScale: {x: 6, y: 6, z: 6}
   m_Children:
   - {fileID: 4465950272753464}
   - {fileID: 4893109742360696}
+  - {fileID: 4577921297095668}
+  - {fileID: 4339428306151774}
+  - {fileID: 4986523043957412}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!4 &4465950272753464
 Transform:
   m_ObjectHideFlags: 1
@@ -91,6 +153,19 @@ Transform:
   m_Father: {fileID: 4450577986492746}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4577921297095668
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1701517240855206}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: -0.013333295, y: -0.33, z: 0.010632178}
+  m_LocalScale: {x: 0.1666667, y: 0.1666667, z: 0.16666667}
+  m_Children: []
+  m_Father: {fileID: 4450577986492746}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!4 &4893109742360696
 Transform:
   m_ObjectHideFlags: 1
@@ -104,6 +179,19 @@ Transform:
   m_Father: {fileID: 4450577986492746}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4986523043957412
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1961440103426454}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.60833347, y: -0.024999937, z: 0.0026041665}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4450577986492746}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!60 &60294378448551850
 PolygonCollider2D:
   m_ObjectHideFlags: 1
@@ -211,6 +299,30 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114254686882261498
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1128106436826268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33c74726a13629f4d8a0b9ff51d3ddfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ZeusBulletSpeed: 0
+  ZeusBulletLife: 0
+  lavaWavePrefab: {fileID: 1211149158451806, guid: d738298eb72b70247a0a6e331d53f6d1,
+    type: 2}
+  torch1: {fileID: 4339428306151774}
+  torch2: {fileID: 4986523043957412}
+  LeftTorchPrefab: {fileID: 1692413149439724, guid: 376c02559fbb1624daae3f29869d6211,
+    type: 2}
+  RightTorchPrefab: {fileID: 1422139720155262, guid: 7c8c6e2a0c39efd46aa7ad0c0e0051fd,
+    type: 2}
+  LightingBallPrefab: {fileID: 1540295101897834, guid: fc02191de4c22e0419d1313d522a3e98,
+    type: 2}
+  KronosGunLocation: {fileID: 4577921297095668}
 --- !u!114 &114693778408700114
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -223,6 +335,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 1000
+  explosionEffect: {fileID: 0}
 --- !u!212 &212128035059190140
 SpriteRenderer:
   m_ObjectHideFlags: 1

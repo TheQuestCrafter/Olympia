@@ -7,6 +7,7 @@ public class HadesTorches : MonoBehaviour
     CapsuleCollider2D cc2D;
     GameObject player;
     GameObject Hades;
+    GameObject Kronos;
     public SpriteRenderer sr;
     public GameObject lavaWavePrefab;
 
@@ -24,11 +25,11 @@ public class HadesTorches : MonoBehaviour
             PlayerBehavior temp = FindObjectOfType<PlayerBehavior>();
             this.player = temp.gameObject;
         }
-        if (this.Hades == null)
-        {
-            HadesScript temp2 = FindObjectOfType<HadesScript>();
-            this.Hades = temp2.gameObject;
-        }
+        //if (this.Hades == null)
+        //{
+        //    HadesScript temp2 = FindObjectOfType<HadesScript>();
+        //    this.Hades = temp2.gameObject;
+        //}
         cc2D = GetComponent<CapsuleCollider2D>();
         sr = GetComponent<SpriteRenderer>();
         HP = 10f;

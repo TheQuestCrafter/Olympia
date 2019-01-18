@@ -19,7 +19,6 @@ public class HadesScript : MonoBehaviour
     float BigBombSpeed;
 
     bool moveRight;
-    bool SpawnTorchAlready;
     Vector2 Direction;
     float speed;
 
@@ -58,9 +57,6 @@ public class HadesScript : MonoBehaviour
             SpawnTorches();
             LeftTorch = GameObject.FindGameObjectWithTag("LeftTorch");
             RightTorch = GameObject.FindGameObjectWithTag("RightTorch");
-
-            
-            
 
         }
         
