@@ -5,22 +5,16 @@ using UnityEngine.EventSystems;
 
 public class SelectCanvasScript : MonoBehaviour {
 
-    public EventSystem eventSystem;
-    public GameObject selectedObject;
+    [SerializeField]
+    private EventSystem eventSystem;
+    [SerializeField]
+    private GameObject selectedObject;
 
     private bool buttonSelected;
 
-    void Update()
+    public void ReEnableMenu()
     {
-        if ( !buttonSelected)
-        {
-            eventSystem.SetSelectedGameObject(selectedObject);
-            buttonSelected = true;
-        }
-    }
-
-    private void OnDisable()
-    {
-        buttonSelected = false;
+        eventSystem.SetSelectedGameObject(selectedObject);
+        buttonSelected = true;
     }
 }
