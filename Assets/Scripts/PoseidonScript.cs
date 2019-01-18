@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // will be used to keep state of tentacles so that they can act appropriately
-public enum TentacleState { Stop, Attack, Reset } 
+public enum TentacleState { Stop, Attack, Reset} 
 
 public class PoseidonScript : MonoBehaviour
 {
@@ -12,20 +12,22 @@ public class PoseidonScript : MonoBehaviour
     public GameObject WaterBeam;
 
     public GameObject RightTentacle, LeftTentacle;
+    Vector3 RTentacleShoulder, LTentacleShoulder;
     TentacleState RTentacleState, LTentacleState; // The current state of the tentacles
     public float RTentacleNF, LTentacleNF; // Tentacle next fires for time.
+    bool RTentacleReady, LTentacleReady;
     public float RTentacleFR, LTentacleFR; // Tentacle fire rate, how fast it attacks with the tentacles
 
     PolygonCollider2D pc2D;
     public Transform poseidonGun;
     float Speed;
     float NextFireBubble, FireRateBubble;
-    float NextFireLaser, FireRateLaser;
+    float NextFireLaser, FireRateLaser, FireIntervalLaser; // FireRate is time between individual bullets. FireInterval is time between the waves of attack
     bool PivotRight;
     float radius;
     Vector3 Direction;
     System.Random rand;
-    float angle;
+    float currentAngle, startAngle, endAngle;
 
     // Use this for initialization
     void Awake()
@@ -39,16 +41,21 @@ public class PoseidonScript : MonoBehaviour
         NextFireBubble = Time.time + FireRateBubble;
 
         LTentacleState = RTentacleState = TentacleState.Stop;
+        LTentacleShoulder = new Vector3(-5.18f, 5.33f);
+        RTentacleShoulder = new Vector3(5.56f, 5.21f);
         RTentacleFR = 7.1f;
         LTentacleFR = 11.3f;
         RTentacleNF = Time.time + RTentacleFR;
         LTentacleNF = Time.time + LTentacleFR;
+        RTentacleReady = LTentacleReady = true;
 
+        FireIntervalLaser = 12f;
         FireRateLaser = 0.01f;
         NextFireLaser = Time.time + FireRateLaser;
         rand = new System.Random();
         Speed = 3f;
-        angle = 220;
+        startAngle = currentAngle = 220;
+        endAngle = 140; 
         Direction = new Vector3(0, 0, 1);
         pc2D = GetComponent<PolygonCollider2D>();
 
@@ -84,22 +91,51 @@ public class PoseidonScript : MonoBehaviour
         {
             case TentacleState.Stop:
                 {
+                    // Tentacle doesn't move. Can be at either end point
                     break;
                 }
             case TentacleState.Attack:
                 {
                     if(right)
                     {
-                        //RightTentacle.transform.Rotate(;
+                        RightTentacle.transform.Rotate(RTentacleShoulder, -Direction.x * Speed);
+                        if(RightTentacle.transform.rotation.z <= -60)
+                        {
+                            RTentacleState = TentacleState.Stop;
+                            RTentacleReady = false;
+                        }
                     }
                     else
                     {
-                        LeftTentacle.transform.Rotate(Direction * Speed);
+                        LeftTentacle.transform.Rotate(LTentacleShoulder, Direction.x * Speed);
+                        if (RightTentacle.transform.rotation.z >= 60)
+                        {
+                            LTentacleState = TentacleState.Stop;
+                            LTentacleReady = false;
+                        }
                     }
                     break;
                 }
             case TentacleState.Reset:
                 {
+                    if (right)
+                    {
+                        RightTentacle.transform.Rotate(RTentacleShoulder, Direction.x * Speed * 0.5f);
+                        if (RightTentacle.transform.rotation.z >= 5)
+                        {
+                            RTentacleState = TentacleState.Stop;
+                            RTentacleReady = true;
+                        }
+                    }
+                    else
+                    {
+                        LeftTentacle.transform.Rotate(LTentacleShoulder, -Direction.x * Speed * 0.5f);
+                        if (LeftTentacle.transform.rotation.z <= -10.36f)
+                        {
+                            LTentacleState = TentacleState.Stop;
+                            LTentacleReady = true;
+                        }
+                    }
                     break;
                 }
         }
@@ -147,7 +183,6 @@ public class PoseidonScript : MonoBehaviour
 
             float angle = (float)temp;
 
-
             float projectileDirXposition = poseidonGun.position.x + Mathf.Sin((angle * Mathf.PI) / 180) * radius;
             float projectileDirYposition = poseidonGun.position.y + Mathf.Cos((angle * Mathf.PI) / 180) * radius;
 
@@ -159,19 +194,21 @@ public class PoseidonScript : MonoBehaviour
                 new Vector2(projectileMoveDirection.x, projectileMoveDirection.y);
 
             NextFireBubble = Time.time + FireRateBubble + 20;
-            
+
+            Destroy(proj, 7);
         }
         
 
     }
+
     void Attack3()
     {
        
-            if (Time.time > NextFireLaser)
-            {
+        if (Time.time > FireIntervalLaser && Time.time > NextFireLaser)
+        {
 
-            float projectileDirXposition = poseidonGun.position.x + Mathf.Sin((angle * Mathf.PI) / 180) * radius;
-            float projectileDirYposition = poseidonGun.position.y + Mathf.Cos((angle * Mathf.PI) / 180) * radius;
+            float projectileDirXposition = poseidonGun.position.x + Mathf.Sin((currentAngle * Mathf.PI) / 180) * radius;
+            float projectileDirYposition = poseidonGun.position.y + Mathf.Cos((currentAngle * Mathf.PI) / 180) * radius;
 
             Vector3 projectileVector = new Vector2(projectileDirXposition, projectileDirYposition);
             Vector3 projectileMoveDirection = (projectileVector - poseidonGun.position).normalized * Speed;
@@ -181,9 +218,15 @@ public class PoseidonScript : MonoBehaviour
                 new Vector2(projectileMoveDirection.x, projectileMoveDirection.y);
 
             NextFireLaser = Time.time + FireRateLaser;
-            angle -= 1f;
+            currentAngle -= 1f;
 
-            Destroy(proj, 5);
+            if(currentAngle <= endAngle)
+            {
+                NextFireLaser = Time.time + FireIntervalLaser;
+                currentAngle = startAngle;
+            }
+
+            Destroy(proj, 3.5f);
         }
     }
 

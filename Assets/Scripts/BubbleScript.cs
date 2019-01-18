@@ -55,6 +55,8 @@ public class BubbleScript : MonoBehaviour {
             var LBall = (GameObject)Instantiate(
                 LightingBall, this.transform.position, this.transform.rotation);
 
+            Destroy(LBall, 12);
+
         }
         if (collision.tag == "PlayerBullet" || collision.tag == "PlayerWaterBullet" || collision.tag == "PlayerFireBullet")
         {
