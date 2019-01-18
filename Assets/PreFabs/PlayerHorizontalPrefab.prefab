@@ -181,6 +181,7 @@ MonoBehaviour:
   invulnerabilityOffTime: 0
   health: 0
   weaponSelected: 0
+  Weapons: 0100000000
 --- !u!212 &212813229466694202
 SpriteRenderer:
   m_ObjectHideFlags: 1

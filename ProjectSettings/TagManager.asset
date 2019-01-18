@@ -18,6 +18,8 @@ TagManager:
   - Hades
   - LeftTorch
   - RightTorch
+  - Zeus
+  - Poseidon
   layers:
   - Default
   - TransparentFX

@@ -22,7 +22,7 @@ public class PlayerBehavior : MonoBehaviour
 
     BulletManager BM;
 
-    bool[] Weapons = new bool[5] { true, true, true, true, false };
+    public bool[] Weapons = new bool[5] { true, false, false, false, false };
 
     // Use this for initialization
     void Awake()
@@ -40,7 +40,7 @@ public class PlayerBehavior : MonoBehaviour
         health = 3; // will normally start with 3 hp
         weaponSelected = 0; // default weapon selected
 
-      
+       
 
     }
 

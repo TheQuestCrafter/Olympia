@@ -36,7 +36,7 @@ public class BubbleScript : MonoBehaviour {
         {
             rb2D.AddForce(Vector2.left * pushForce, ForceMode2D.Impulse);
         }
-        else if (collision.gameObject.tag == "Enemy")
+        else if (collision.gameObject.tag == "Poseidon")
         {
             rb2D.AddForce(Vector2.down * pushForce, ForceMode2D.Impulse);
         }
