@@ -25,6 +25,7 @@ public class BossScriptTest : MonoBehaviour
     GameObject player;
     GameObject bullet;
     public float hp;
+    public GameObject explosionEffect;
 
     // Use this for initialization
     void Awake ()
@@ -45,6 +46,8 @@ public class BossScriptTest : MonoBehaviour
         if (hp < 0f)
         {
             Destroy(this.gameObject);
+            var expldi = (GameObject)Instantiate(explosionEffect, this.transform.position, this.transform.rotation);
+            
         }
 
     }

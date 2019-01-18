@@ -12,6 +12,7 @@ public class ZeusScript : MonoBehaviour
     bool LockedOn;
     float SpawnNextBullet, FireNextBullet;
     System.Random rand;
+    
 
     // Use this for initialization
     void Awake()
