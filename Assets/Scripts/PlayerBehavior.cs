@@ -111,11 +111,11 @@ public class PlayerBehavior : MonoBehaviour
     {
         if (!invulnerabilityOn)
         {
-            if(health % 1f != 0)
-            {
-                health = (float)Math.Floor((double)health);
+            //if(health % 1f != 0)
+            //{
+            //    health = (float)Math.Floor((double)health);
                 
-            }
+            //}
             invulnerabilityOn = true;
             invulnerabilityOffTime = Time.time + invulnerabilityDuration;
             pc2D.enabled = false;

@@ -15,6 +15,9 @@ TagManager:
   - RightTentacle
   - LeftTentacle
   - Wall
+  - Hades
+  - LeftTorch
+  - RightTorch
   layers:
   - Default
   - TransparentFX

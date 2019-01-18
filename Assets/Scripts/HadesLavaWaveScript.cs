@@ -39,7 +39,7 @@ public class HadesLavaWaveScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            player.GetComponent<PlayerBehavior>().health-= 0.5f;
+            player.GetComponent<PlayerBehavior>().health--;
             player.GetComponent<PlayerBehavior>().TurnOnInvuln();
         }
     }

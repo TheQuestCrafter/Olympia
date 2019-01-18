@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114904449323979836}
   m_Layer: 0
   m_Name: HadesBoss
-  m_TagString: Untagged
+  m_TagString: Hades
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -161,6 +161,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14ccd092b4e4799449183f7365f7e44c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Torch1On: 0
+  Torch2On: 0
   fireBallPrefab: {fileID: 1053274473089252, guid: ce1baa7d476593d44a4ba5d7594b1189,
     type: 2}
   hadesBombPrefab: {fileID: 1156884999592762, guid: cfb042deb681f264c84fd11755199096,
@@ -169,6 +171,8 @@ MonoBehaviour:
     type: 2}
   torch1: {fileID: 0}
   torch2: {fileID: 0}
+  TorchPrefab: {fileID: 1562831811187178, guid: 75e9ae402ad7618429be7ee4a894a503,
+    type: 2}
   hadesGun: {fileID: 4160388450936618}
 --- !u!212 &212780776419285788
 SpriteRenderer:
