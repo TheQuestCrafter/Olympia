@@ -23,8 +23,18 @@ public class KronosScript : MonoBehaviour
     public GameObject LightingBallPrefab;
     public Transform KronosGunLocation;
 
+    public Transform CreditsLocation;
+    public GameObject Credits;
+    BossScriptTest bossScript;
+    private bool isCreated;
+    private Vector2 Direction;
+
+    GameObject credit;
+
+    public bool StartCredit;
+
     // Use this for initialization
-    void Awake ()
+    void Awake()
     {
         if (this.player == null)
         {
@@ -43,11 +53,14 @@ public class KronosScript : MonoBehaviour
 
         rand = new System.Random();
 
-        
+
+        credit = (GameObject)Instantiate(Credits, CreditsLocation.transform.position, CreditsLocation.transform.rotation);
+
+        StartCredit = false;
     }
-	
-	// Update is called once per frame
-	void FixedUpdate ()
+
+    // Update is called once per frame
+    void FixedUpdate()
     {
         if (Time.time > HadesATK1NF)
         {
@@ -83,6 +96,7 @@ public class KronosScript : MonoBehaviour
 
         }
         Attack2();
+
     }
 
 
@@ -117,7 +131,7 @@ public class KronosScript : MonoBehaviour
 
     void Attack2()
     {
-        if(Vertical)
+        if (Vertical)
         {
             if (Time.time > ZeusATKNF)
             {
@@ -164,6 +178,11 @@ public class KronosScript : MonoBehaviour
         }
 
 
+
+    }
+
+    void Attack3()
+    {
 
     }
 }
