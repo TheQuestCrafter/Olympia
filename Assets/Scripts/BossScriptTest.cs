@@ -27,10 +27,9 @@ public class BossScriptTest : MonoBehaviour
     GameObject bullet;
     public float hp;
     public GameObject explosionEffect;
-
+    
     [SerializeField]
     private Image bar;
-
     private float barLength;
     private float startingHP;
 
@@ -61,9 +60,8 @@ public class BossScriptTest : MonoBehaviour
 	// Update is called once per frame
 	void FixedUpdate ()
     {
-        if (hp < 0f)
+        if (hp <= 0f)
         {
-
             if (this.gameObject.tag == "Zeus")
             {
                 player.GetComponent<PlayerBehavior>().Weapons[1] = true;
@@ -76,7 +74,7 @@ public class BossScriptTest : MonoBehaviour
             {
                 player.GetComponent<PlayerBehavior>().Weapons[3] = true;
             }
-            Destroy(this.gameObject);
+            this.gameObject.SetActive(false);
             var expldi = (GameObject)Instantiate(explosionEffect, this.transform.position, this.transform.rotation);
         }
 

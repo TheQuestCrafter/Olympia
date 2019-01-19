@@ -221,11 +221,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4244741083208452, guid: bf23fd5d923075a429d30aae1bfc1827, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.14
+      value: -0.07
       objectReference: {fileID: 0}
     - target: {fileID: 4244741083208452, guid: bf23fd5d923075a429d30aae1bfc1827, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 3.11
+      value: 3.09
       objectReference: {fileID: 0}
     - target: {fileID: 4244741083208452, guid: bf23fd5d923075a429d30aae1bfc1827, type: 2}
       propertyPath: m_LocalPosition.z
@@ -259,7 +259,17 @@ Prefab:
     - target: {fileID: 114134636694303310, guid: bf23fd5d923075a429d30aae1bfc1827,
         type: 2}
       propertyPath: hp
-      value: 1000
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114134636694303310, guid: bf23fd5d923075a429d30aae1bfc1827,
+        type: 2}
+      propertyPath: transitionTime
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114134636694303310, guid: bf23fd5d923075a429d30aae1bfc1827,
+        type: 2}
+      propertyPath: nextScene
+      value: KronosFight
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bf23fd5d923075a429d30aae1bfc1827, type: 2}
@@ -312,6 +322,49 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 689955513902e2044a6f749280fcdb87, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1015822719
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1015822721}
+  - component: {fileID: 1015822720}
+  m_Layer: 0
+  m_Name: SceneTransitioner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1015822720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1015822719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a2c39ed2838e0e4f84dba203b5cee6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boss: {fileID: 1735150380}
+  transitionTime: 2
+  nextScene: KronosFight
+--- !u!4 &1015822721
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1015822719}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -9.3, y: 1.8, z: -0.05432642}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1501706857
 GameObject:
   m_ObjectHideFlags: 0
@@ -455,6 +508,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1735150380 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1146010480640016, guid: bf23fd5d923075a429d30aae1bfc1827,
+    type: 2}
+  m_PrefabInternal: {fileID: 662433736}
 --- !u!1001 &2117906843
 Prefab:
   m_ObjectHideFlags: 0
