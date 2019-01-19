@@ -275,7 +275,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.05
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -436,7 +436,8 @@ MonoBehaviour:
   damageSound: {fileID: 8300000, guid: 76b68fde50c129b4fa0df52e2e5065b2, type: 3}
   idleSound: {fileID: 8300000, guid: 51fb7ffbf12819c40bd99af6b21fa057, type: 3}
   hp: 100
-  explosionEffect: {fileID: 0}
+  explosionEffect: {fileID: 1299146535993584, guid: d60805234b04c6d488c68eaa44eaec62,
+    type: 2}
   bar: {fileID: 0}
 --- !u!212 &212128035059190140
 SpriteRenderer:

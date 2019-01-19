@@ -250,6 +250,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireplaceOnObject: {fileID: 1537909315}
   fireDuration: 0
+  waterPenalty: 0
 --- !u!60 &969225748
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -462,12 +463,6 @@ Prefab:
       propertyPath: bar
       value: 
       objectReference: {fileID: 933905363}
-    - target: {fileID: 114693778408700114, guid: 0d5289c107bccf44587f412f95c4c262,
-        type: 2}
-      propertyPath: explosionEffect
-      value: 
-      objectReference: {fileID: 1299146535993584, guid: d60805234b04c6d488c68eaa44eaec62,
-        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0d5289c107bccf44587f412f95c4c262, type: 2}
   m_IsPrefabParent: 0
