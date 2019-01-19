@@ -62,18 +62,18 @@ public class BossScriptTest : MonoBehaviour
     {
         if (hp <= 0f)
         {
-            if (this.gameObject.tag == "Zeus")
-            {
-                player.GetComponent<PlayerBehavior>().Weapons[1] = true;
-            }
-            if (this.gameObject.tag == "Poseidon")
-            {
-                player.GetComponent<PlayerBehavior>().Weapons[2] = true;
-            }
-            if (this.gameObject.tag == "Hades")
-            {
-                player.GetComponent<PlayerBehavior>().Weapons[3] = true;
-            }
+            //if (this.gameObject.tag == "Zeus")
+            //{
+            //    player.GetComponent<PlayerBehavior>().Weapons[1] = true;
+            //}
+            //if (this.gameObject.tag == "Poseidon")
+            //{
+            //    player.GetComponent<PlayerBehavior>().Weapons[2] = true;
+            //}s
+            //if (this.gameObject.tag == "Hades")
+            //{
+            //    player.GetComponent<PlayerBehavior>().Weapons[3] = true;
+            //}
             this.gameObject.SetActive(false);
             var expldi = (GameObject)Instantiate(explosionEffect, this.transform.position, this.transform.rotation);
         }

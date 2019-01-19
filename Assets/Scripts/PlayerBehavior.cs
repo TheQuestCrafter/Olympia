@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public class Boundary
@@ -26,6 +27,7 @@ public class PlayerBehavior : MonoBehaviour
     public int weaponSelected;
 
     BulletManager BM;
+    SceneManager sceneManager = new SceneManager();
     public Boundary boundary;
     public bool[] Weapons = new bool[5] { true, false, false, false, false };
 
@@ -33,7 +35,6 @@ public class PlayerBehavior : MonoBehaviour
     void Awake()
     {
         Screen.SetResolution(240, 160, false);
-
         this.rb2D = gameObject.GetComponent<Rigidbody2D>();
         this.pc2D = GetComponent<PolygonCollider2D>();
         this.sr = GetComponent<SpriteRenderer>();
@@ -81,6 +82,25 @@ public class PlayerBehavior : MonoBehaviour
             Mathf.Clamp(rb2D.position.y, boundary.yMin, boundary.yMax)
         );
 
+        UnlockWeapons();
+
+
+    }
+
+    private void UnlockWeapons()
+    {
+       if(SceneManager.GetActiveScene().buildIndex >= 3)
+        {
+            Weapons[1] = true;
+        }
+       if(SceneManager.GetActiveScene().buildIndex >= 5)
+        {
+            Weapons[2] = true;
+        }
+        if (SceneManager.GetActiveScene().buildIndex >= 7)
+        {
+            Weapons[3] = true;
+        }
     }
 
     private void Respawn()
