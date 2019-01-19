@@ -172,7 +172,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 100
-  explosionEffect: {fileID: 0}
+  explosionEffect: {fileID: 1299146535993584, guid: d60805234b04c6d488c68eaa44eaec62,
+    type: 2}
   bar: {fileID: 683445475}
 --- !u!60 &196113246
 PolygonCollider2D:

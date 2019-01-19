@@ -8,6 +8,8 @@ public class BubbleScript : MonoBehaviour {
     CircleCollider2D cc2D;
     public GameObject LightingBall;
     float pushForce;
+    [SerializeField]
+    AudioSource audioSource;
 
 	// Use this for initialization
 	void Awake ()
@@ -48,8 +50,9 @@ public class BubbleScript : MonoBehaviour {
     {
         if(collision.tag == "PlayerLightingBullet")
         {
+            audioSource.Play();
             rb2D.constraints = RigidbodyConstraints2D.FreezeAll;
-            Destroy(this.gameObject);
+            Destroy(this.gameObject,.4f);
             Destroy(collision.gameObject);
 
             var LBall = (GameObject)Instantiate(
