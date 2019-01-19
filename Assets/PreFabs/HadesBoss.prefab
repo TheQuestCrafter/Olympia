@@ -11,36 +11,6 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1146010480640016}
   m_IsPrefabParent: 1
---- !u!1 &1056984718086632
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4932532952423564}
-  m_Layer: 0
-  m_Name: TorchFire2Location
-  m_TagString: Enemy
-  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1078985424812938
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4772827137037870}
-  m_Layer: 0
-  m_Name: TorchFire1Location
-  m_TagString: Enemy
-  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1146010480640016
 GameObject:
   m_ObjectHideFlags: 0
@@ -54,6 +24,7 @@ GameObject:
   - component: {fileID: 60027032138949466}
   - component: {fileID: 114134636694303310}
   - component: {fileID: 114904449323979836}
+  - component: {fileID: 82955941937927786}
   m_Layer: 0
   m_Name: HadesBoss
   m_TagString: Hades
@@ -96,40 +67,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1146010480640016}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.12, y: 3.75, z: 0}
+  m_LocalPosition: {x: 0.14, y: 3.11, z: 0}
   m_LocalScale: {x: 3.3227248, y: 3.3227248, z: 3.3227248}
   m_Children:
   - {fileID: 4160388450936618}
-  - {fileID: 4772827137037870}
-  - {fileID: 4932532952423564}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4772827137037870
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1078985424812938}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.031465, y: -0.03885368, z: 0.004702465}
-  m_LocalScale: {x: 1.8057468, y: 1.8057468, z: 1.8057468}
-  m_Children: []
-  m_Father: {fileID: 4244741083208452}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4932532952423564
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1056984718086632}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.9592353, y: -0.03608484, z: 0.004702465}
-  m_LocalScale: {x: 1.8057468, y: 1.8057468, z: 1.8057468}
-  m_Children: []
-  m_Father: {fileID: 4244741083208452}
-  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &50433887353483194
 Rigidbody2D:
@@ -196,6 +139,101 @@ PolygonCollider2D:
       - {x: 0.10270661, y: 0.004453085}
       - {x: 0.32822958, y: -0.035860535}
       - {x: 0.4682294, y: 0.08765568}
+--- !u!82 &82955941937927786
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1146010480640016}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &114134636694303310
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -207,8 +245,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81421e5c17aef73469516516c332864d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 1000
-  explosionEffect: {fileID: 0}
+  audioSource: {fileID: 82955941937927786}
+  deathSound: {fileID: 8300000, guid: a4b54678ab9275445ba713dcd6fecbec, type: 3}
+  damageSound: {fileID: 8300000, guid: 56752bb1056e59c44ac681252581dfbd, type: 3}
+  idleSound: {fileID: 8300000, guid: a4b54678ab9275445ba713dcd6fecbec, type: 3}
+  hp: 100
+  explosionEffect: {fileID: 1299146535993584, guid: d60805234b04c6d488c68eaa44eaec62,
+    type: 2}
+  bar: {fileID: 0}
 --- !u!114 &114904449323979836
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -226,8 +270,8 @@ MonoBehaviour:
     type: 2}
   lavaWavePrefab: {fileID: 1211149158451806, guid: d738298eb72b70247a0a6e331d53f6d1,
     type: 2}
-  torch1: {fileID: 4772827137037870}
-  torch2: {fileID: 4932532952423564}
+  torch1: {fileID: 0}
+  torch2: {fileID: 0}
   LeftTorchPrefab: {fileID: 1692413149439724, guid: 376c02559fbb1624daae3f29869d6211,
     type: 2}
   RightTorchPrefab: {fileID: 1422139720155262, guid: 7c8c6e2a0c39efd46aa7ad0c0e0051fd,
