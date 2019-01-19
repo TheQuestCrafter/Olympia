@@ -24,6 +24,8 @@ public class EnemySpawner : MonoBehaviour
 
     Vector3 generatedSpawn; // This is the coordinate of the generated spawn, contains the determinedSpawnHeight
 
+    public float sceneTimeLeft;
+
     void Awake ()
     {
         EnemyChoice = 2;
@@ -41,6 +43,7 @@ public class EnemySpawner : MonoBehaviour
     // Update is called once per frame
     void Update ()
     {
+        sceneTimeLeft = LevelEndTime - Time.time;
 		if(Time.time >= LevelEndTime)
         {
             CancelInvoke();
