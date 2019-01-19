@@ -87,6 +87,7 @@ public class PoseidonScript : MonoBehaviour
         {
             LTentacleState = TentacleState.Attack;
         }
+        
 
         determineTentacleStateAction(RTentacleState, true);
         determineTentacleStateAction(LTentacleState, false);
@@ -94,12 +95,13 @@ public class PoseidonScript : MonoBehaviour
 
     void determineTentacleStateAction(TentacleState tentacleState, bool right) // right is the right tentacle
     {
-        if (RightTentacle.transform.rotation.z <= -60)
+        if (RightTentacle.gameObject.transform.rotation.z <= -60)
         {
             RTentacleState = TentacleState.Stop;
             RTentacleNF = Time.time + RTentacleFR;
             RTentacleReady = false;
         }
+
         switch (tentacleState)
         {
             case TentacleState.Stop:

@@ -163,16 +163,6 @@ Prefab:
       propertyPath: bar
       value: 
       objectReference: {fileID: 373860806}
-    - target: {fileID: 4852826555121598, guid: 16cc01c10d89cae40a107bbcd70ab613, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114968489318241802, guid: 16cc01c10d89cae40a107bbcd70ab613,
-        type: 2}
-      propertyPath: explosionEffect
-      value: 
-      objectReference: {fileID: 1299146535993584, guid: d60805234b04c6d488c68eaa44eaec62,
-        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 16cc01c10d89cae40a107bbcd70ab613, type: 2}
   m_IsPrefabParent: 0

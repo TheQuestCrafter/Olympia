@@ -13,7 +13,7 @@ public class BossScriptTest : MonoBehaviour
     [SerializeField]
     AudioClip damageSound;
     [SerializeField]
-    AudioClip weaponSound;
+    AudioClip idleSound;
     IEnumerator FireDamage(float damageDuration, int damageCount, float damageAmount)
     {
         onFire = true;
@@ -73,12 +73,20 @@ public class BossScriptTest : MonoBehaviour
         rand = new System.Random();
 
         //Random time to start
-        SoundEffectStart = rand.Next();
+        SoundEffectStart = rand.Next(4,12);
+        SoundEffectNext = Time.time + SoundEffectStart;
     }
 	
 	// Update is called once per frame
 	void FixedUpdate ()
     {
+        if (Time.time > SoundEffectNext && idleSound != null)
+        {
+            audioSource.PlayOneShot(idleSound);
+            //After Sound effect is played, generate new random. 
+            SoundEffectStart = rand.Next(4,12);
+            SoundEffectNext = Time.time + SoundEffectStart;
+        }
         if (hp <= 0f)
         {
             //if (this.gameObject.tag == "Zeus")
@@ -86,26 +94,16 @@ public class BossScriptTest : MonoBehaviour
             //}
             //if (this.gameObject.tag == "Poseidon")
             //{
-            //}s
+            //}
             //if (this.gameObject.tag == "Hades")
             //{
-            
             //}
-
-            if(Time.time > SoundEffectNext)
-            {
-
-                //After Sound effect is played, generate new random. 
-                SoundEffectStart = rand.Next();
-                SoundEffectNext = Time.time + SoundEffectStart;
-            }
-
 
             audioSource.PlayOneShot(deathSound);
           
             var expldi = (GameObject)Instantiate(explosionEffect, this.transform.position, this.transform.rotation);
 
-            Destroy(this.gameObject);
+            Destroy(this.gameObject,deathSound.length);
         }
 
         HealthBar();
@@ -118,26 +116,26 @@ public class BossScriptTest : MonoBehaviour
         {
             hp -= player.GetComponent<BulletManager>().weaponDamage;
             Destroy(collision.gameObject);
-
+            audioSource.PlayOneShot(damageSound);
         }
         if (collision.tag == "PlayerFireBullet")
         {
             hp -= player.GetComponent<BulletManager>().weaponDamage;
             Destroy(collision.gameObject);
             StartCoroutine(FireDamage(1f, 5, 1f));
-
+            audioSource.PlayOneShot(damageSound);
         }
         if (collision.tag == "PlayerWaterBullet")
         {
             hp -= player.GetComponent<BulletManager>().weaponDamage;
             Destroy(collision.gameObject);
-
+            audioSource.PlayOneShot(damageSound);
         }
         if (collision.tag == "PlayerLightingBullet")
         {
             hp -= player.GetComponent<BulletManager>().weaponDamage;
             Destroy(collision.gameObject);
-
+            audioSource.PlayOneShot(damageSound);
         }
     }
 

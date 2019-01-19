@@ -105,6 +105,7 @@ GameObject:
   - component: {fileID: 60489488020123636}
   - component: {fileID: 114131581223390636}
   - component: {fileID: 114946935465577128}
+  - component: {fileID: 82070993021514922}
   m_Layer: 0
   m_Name: Zeus Head1
   m_TagString: Zeus
@@ -150,7 +151,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1106638281866252}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.157, y: 0.053, z: 0}
+  m_LocalPosition: {x: -0.247, y: -0.008, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4496494956340004}
@@ -217,7 +218,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1983883503464560}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.123353, y: -0.40977, z: 0}
+  m_LocalPosition: {x: 3.16, y: -0.46, z: 0}
   m_LocalScale: {x: 6.5, y: 6.5, z: 6}
   m_Children:
   - {fileID: 4112875622833498}
@@ -384,6 +385,101 @@ PolygonCollider2D:
       - {x: 0.10013278, y: -0.028165042}
       - {x: 0.10180707, y: 0.120550215}
       - {x: 0.08180705, y: 0.16223499}
+--- !u!82 &82070993021514922
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1875144618224744}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.569
+  m_Pitch: 0.73
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 173
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!95 &95125252717531588
 Animator:
   serializedVersion: 3
@@ -431,8 +527,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81421e5c17aef73469516516c332864d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 1000
-  explosionEffect: {fileID: 0}
+  audioSource: {fileID: 82070993021514922}
+  deathSound: {fileID: 8300000, guid: fb6d6cc392d05a447a1892543e8eac74, type: 3}
+  damageSound: {fileID: 8300000, guid: 2e4f84d3d3de6154ca196dd49ce51e26, type: 3}
+  idleSound: {fileID: 0}
+  hp: 100
+  explosionEffect: {fileID: 1299146535993584, guid: d60805234b04c6d488c68eaa44eaec62,
+    type: 2}
+  bar: {fileID: 0}
 --- !u!114 &114498734455908022
 MonoBehaviour:
   m_ObjectHideFlags: 1
