@@ -40,7 +40,7 @@ public class PlayerBehavior : MonoBehaviour
     // Use this for initialization
     void Awake()
     {
-        Screen.SetResolution(240, 160, false);
+        Screen.SetResolution(1200, 800, false);
         this.rb2D = gameObject.GetComponent<Rigidbody2D>();
         this.pc2D = GetComponent<PolygonCollider2D>();
         this.sr = GetComponent<SpriteRenderer>();
