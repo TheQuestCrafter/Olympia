@@ -69,7 +69,7 @@ public class PlayerBehavior : MonoBehaviour
             sr.color = new Color(1f, 1f, 1f, 1f);
         }
 
-        if(health == 0)
+        if(health <= 0)
         {
             Destroy(this.gameObject);
             Respawn();
