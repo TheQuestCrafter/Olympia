@@ -11,4 +11,25 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ZeusMinionFight.unity
     guid: 66297df3b1043e840beb2a1894e43a26
+  - enabled: 1
+    path: Assets/Scenes/ZeusBossFight.unity
+    guid: f4461df0e3676cd44b92d2cce2d6f039
+  - enabled: 1
+    path: Assets/Scenes/PoseidonMinionFight.unity
+    guid: 4395757cdcdcffc48bbe62b5a4a2d5bd
+  - enabled: 1
+    path: Assets/Scenes/PoseidonBossFight.unity
+    guid: 6f366c37405434644808f07dce5accae
+  - enabled: 1
+    path: Assets/Scenes/HadesMinionFight.unity
+    guid: c7003b3fe5eaf774fb098f33424dc540
+  - enabled: 1
+    path: Assets/Scenes/HadesBossFight.unity
+    guid: aec34fe166ab1924f8112e9e97e07b12
+  - enabled: 1
+    path: Assets/Scenes/KronosFight.unity
+    guid: 37d82f9f65360674c9b7f3becf9e2645
+  - enabled: 1
+    path: Assets/Scenes/KronosVerticalFight.unity
+    guid: ff0dfcdfbd404474b874da045185677d
   m_configObjects: {}
