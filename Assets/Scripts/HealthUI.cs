@@ -28,11 +28,13 @@ public class HealthUI : MonoBehaviour
         if (player == null)
         {
             heart1.gameObject.SetActive(false);
-            
+            heart2.gameObject.SetActive(false);
+            heart3.gameObject.SetActive(false);
         }
         else if (player.GetComponent<PlayerBehavior>().health == 1)
         {
             heart2.gameObject.SetActive(false);
+            heart3.gameObject.SetActive(false);
         }
         else if (player.GetComponent<PlayerBehavior>().health == 2)
         {

@@ -625,6 +625,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114134636694303310, guid: bf23fd5d923075a429d30aae1bfc1827,
+        type: 2}
+      propertyPath: bar
+      value: 
+      objectReference: {fileID: 683445475}
     - target: {fileID: 114904449323979836, guid: bf23fd5d923075a429d30aae1bfc1827,
         type: 2}
       propertyPath: torch1
@@ -635,11 +640,6 @@ Prefab:
       propertyPath: torch2
       value: 
       objectReference: {fileID: 1108924730}
-    - target: {fileID: 114134636694303310, guid: bf23fd5d923075a429d30aae1bfc1827,
-        type: 2}
-      propertyPath: bar
-      value: 
-      objectReference: {fileID: 683445475}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bf23fd5d923075a429d30aae1bfc1827, type: 2}
   m_IsPrefabParent: 0
