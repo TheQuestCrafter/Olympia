@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class HealthUI : MonoBehaviour
@@ -27,6 +28,7 @@ public class HealthUI : MonoBehaviour
         if (player == null)
         {
             heart1.gameObject.SetActive(false);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
         else if (player.GetComponent<PlayerBehavior>().health == 1)
         {
