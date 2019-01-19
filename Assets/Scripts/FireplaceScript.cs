@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireplaceOffScript : MonoBehaviour
+public class FireplaceScript : MonoBehaviour
 {
     public GameObject fireplaceOnObject; // Set in editor
     PolygonCollider2D pc2D;
@@ -10,6 +10,7 @@ public class FireplaceOffScript : MonoBehaviour
 
     float nextFireExtinguish;
     public float fireDuration; // in seconds
+    public float waterPenalty; // how much time (in seconds) should be subtracted from the fire duration due to being hit by water
     bool fireOn;
 
 	// Use this for initialization
@@ -19,7 +20,8 @@ public class FireplaceOffScript : MonoBehaviour
         sr = gameObject.GetComponent<SpriteRenderer>();
 
         fireOn = false;
-        fireDuration = 10f; 
+        fireDuration = 10f; // default, testing value
+        waterPenalty = 0.05f; // default, testing value. Really low to compensate for water cannon's fast fire rate
 
 	}
 
@@ -29,6 +31,11 @@ public class FireplaceOffScript : MonoBehaviour
         {
             nextFireExtinguish = Time.time + fireDuration;
             fireOn = true;
+        }
+        else if (collision.gameObject.tag == "PlayerWaterBullet")
+        {
+            // POTENTIAL FEATURE!!!
+            nextFireExtinguish -= waterPenalty;
         }
     }
 
