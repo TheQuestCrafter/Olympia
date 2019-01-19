@@ -6,13 +6,21 @@ using UnityEngine.UI;
 public class BossScriptTest : MonoBehaviour
 {
     private bool onFire;
-
+    [SerializeField]
+    AudioSource audioSource;
+    [SerializeField]
+    AudioClip deathSound;
+    [SerializeField]
+    AudioClip damageSound;
+    [SerializeField]
+    AudioClip weaponSound;
     IEnumerator FireDamage(float damageDuration, int damageCount, float damageAmount)
     {
         onFire = true;
         int currentCount = 0;
         while (currentCount < damageCount)
         {
+            audioSource.PlayOneShot(damageSound);
             hp -= damageAmount;
             yield return new WaitForSeconds(damageDuration);
             currentCount++;
@@ -52,7 +60,6 @@ public class BossScriptTest : MonoBehaviour
             PlayerBehavior temp = FindObjectOfType<PlayerBehavior>();
             this.player = temp.gameObject;
         }
-
         //cc2D = GetComponent<CircleCollider2D>();
         pc2D = GetComponent<PolygonCollider2D>();
     }
@@ -74,6 +81,7 @@ public class BossScriptTest : MonoBehaviour
             //{
             //    player.GetComponent<PlayerBehavior>().Weapons[3] = true;
             //}
+            audioSource.PlayOneShot(deathSound);
             this.gameObject.SetActive(false);
             var expldi = (GameObject)Instantiate(explosionEffect, this.transform.position, this.transform.rotation);
         }
