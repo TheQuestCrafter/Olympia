@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4437509282765768}
   - component: {fileID: 114369176185246204}
   m_Layer: 0
-  m_Name: SceneTransitioner
+  m_Name: BossSceneTransitioner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
