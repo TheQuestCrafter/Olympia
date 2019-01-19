@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4863189191847236}
   - component: {fileID: 212836270216339178}
   - component: {fileID: 50788982527678660}
+  - component: {fileID: 114119997447468612}
   m_Layer: 0
   m_Name: InGameCredits
   m_TagString: Untagged
@@ -61,6 +62,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 6
+--- !u!114 &114119997447468612
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1594600906633132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80fa34ade7a8d584cb89930f06309022, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Kronos: {fileID: 1051013427814544, guid: 0d5289c107bccf44587f412f95c4c262, type: 2}
 --- !u!212 &212836270216339178
 SpriteRenderer:
   m_ObjectHideFlags: 1

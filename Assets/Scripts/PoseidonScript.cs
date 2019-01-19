@@ -75,19 +75,19 @@ public class PoseidonScript : MonoBehaviour
         if (Time.time > 10)
             Attack3();
 
-        if(RTentacleReady && Time.time > RTentacleNF)
+        if (RTentacleReady && Time.time > RTentacleNF)
         {
             RTentacleState = TentacleState.Attack;
         }
-        else if(!RTentacleReady && Time.time > RTentacleNF && RTentacleState == TentacleState.Stop)
+        else if (!RTentacleReady && Time.time > RTentacleNF && RTentacleState == TentacleState.Stop)
         {
             RTentacleState = TentacleState.Reset;
         }
-        if(LTentacleReady && Time.time > LTentacleNF)
+        if (LTentacleReady && Time.time > LTentacleNF)
         {
             LTentacleState = TentacleState.Attack;
         }
-        
+
 
         determineTentacleStateAction(RTentacleState, true);
         determineTentacleStateAction(LTentacleState, false);
@@ -170,7 +170,7 @@ public class PoseidonScript : MonoBehaviour
         //    PivotRight = true;
 
 
-        if (RightTentacle.transform.eulerAngles.z >= -49)
+        if (RightTentacle.transform.eulerAngles.z >= 220)
         {
             RightTentacle.transform.Rotate(-Direction * Speed);
             //if (RightTentacle.transform.eulerAngles.z >= 11.30)

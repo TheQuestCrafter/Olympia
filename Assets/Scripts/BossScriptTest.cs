@@ -40,7 +40,7 @@ public class BossScriptTest : MonoBehaviour
 
     System.Random rand;
 
-
+    private bool isCreated;
     
     [SerializeField]
     private Image bar;
@@ -75,6 +75,8 @@ public class BossScriptTest : MonoBehaviour
         //Random time to start
         SoundEffectStart = rand.Next(4,12);
         SoundEffectNext = Time.time + SoundEffectStart;
+
+        isCreated = false;
     }
 	
 	// Update is called once per frame
@@ -100,8 +102,16 @@ public class BossScriptTest : MonoBehaviour
             //}
 
             audioSource.PlayOneShot(deathSound);
+
+
+            if (!isCreated)
+            {
+                var expldi = (GameObject)Instantiate(explosionEffect, this.transform.position, this.transform.rotation);
+
+                Destroy(expldi, 2f);
+                isCreated = true;
+            }
           
-            var expldi = (GameObject)Instantiate(explosionEffect, this.transform.position, this.transform.rotation);
 
             Destroy(this.gameObject,deathSound.length);
         }
