@@ -34,13 +34,15 @@ public class HadesTorches : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         HP = 10f;
         Alive = true;
+        Timer = 10f;
+        TimeEnd = Time.time + Timer;
 
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (HP <= 0)
+        if (HP <= 0 || Time.time > TimeEnd)
         {
             Alive = false;
             Destroy(this.gameObject);

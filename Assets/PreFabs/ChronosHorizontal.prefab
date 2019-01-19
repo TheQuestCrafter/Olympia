@@ -420,6 +420,10 @@ MonoBehaviour:
   LightingBallPrefab: {fileID: 1540295101897834, guid: fc02191de4c22e0419d1313d522a3e98,
     type: 2}
   KronosGunLocation: {fileID: 4577921297095668}
+  CreditsLocation: {fileID: 0}
+  Credits: {fileID: 1594600906633132, guid: e8edaa259a962ba419ab85f57216254f, type: 2}
+  credit: {fileID: 0}
+  StartCredit: 0
 --- !u!114 &114693778408700114
 MonoBehaviour:
   m_ObjectHideFlags: 1
