@@ -28,7 +28,7 @@ public class HealthUI : MonoBehaviour
         if (player == null)
         {
             heart1.gameObject.SetActive(false);
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            
         }
         else if (player.GetComponent<PlayerBehavior>().health == 1)
         {

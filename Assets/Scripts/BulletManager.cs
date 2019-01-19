@@ -22,6 +22,16 @@ public class BulletManager : MonoBehaviour
     public GameObject poseidonBulletPrefab;
     public GameObject hadesBulletPrefab;
 
+    [SerializeField]
+    private AudioSource audioSource;
+    [SerializeField]
+    private AudioClip firing;
+    [SerializeField]
+    private AudioClip firingBeam;
+    private int shotTracker;
+    private int beamTracker;
+
+
     // Use this for initialization
     void Awake ()
     {
@@ -54,7 +64,7 @@ public class BulletManager : MonoBehaviour
                     defaultBulletPrefab,
                     bulletSpawn.position,
                     bulletSpawn.rotation);
-
+                    FiringSound(weapon);
                     // *** nextFire = time right now + the constant cooldown of 0.3f seconds. AKA you're stating the next time you can fire is at that time or later, not earlier.
                     nextFire = Time.time + fireRate;
 
@@ -81,6 +91,8 @@ public class BulletManager : MonoBehaviour
                 fireRate = 0.55f;
                 if (Time.time > nextFire)
                 {
+                    FiringSound(weapon);
+
                     if (vertical)
                     {
                         float angleStep = -15f;
@@ -145,6 +157,7 @@ public class BulletManager : MonoBehaviour
                     poseidonBulletPrefab,
                     bulletSpawn.position,
                     bulletSpawn.rotation);
+                    FiringSound(weapon);
 
                     // *** nextFire = time right now + the constant cooldown of 0.3f seconds. AKA you're stating the next time you can fire is at that time or later, not earlier.
                     nextFire = Time.time + fireRate;
@@ -175,6 +188,7 @@ public class BulletManager : MonoBehaviour
                     hadesBulletPrefab,
                     bulletSpawn.position,
                     bulletSpawn.rotation);
+                    FiringSound(weapon);
 
                     // *** nextFire = time right now + the constant cooldown of 0.3f seconds. AKA you're stating the next time you can fire is at that time or later, not earlier.
                     nextFire = Time.time + fireRate;
@@ -201,6 +215,23 @@ public class BulletManager : MonoBehaviour
                 
         }
 
+    }
+
+    private void FiringSound(int shotType)
+    {
+        
+        if (shotType == 2)
+        {
+            beamTracker++;
+            if (beamTracker > 10)
+            {
+                audioSource.PlayOneShot(firingBeam);
+            }
+        }
+        else
+        {
+                audioSource.PlayOneShot(firing);
+        }
     }
 
 }

@@ -18,6 +18,12 @@ public class PlayerBehavior : MonoBehaviour
     public float moveHorizontal, moveVertical;
     Vector2 Direction; // made with moveHor and moveVer
 
+    [SerializeField]
+    private AudioSource audioSource;
+    [SerializeField]
+    private AudioClip damage;
+    private int healthTracker;
+
     public bool Vertical;
 
     public bool invulnerabilityOn;
@@ -45,8 +51,7 @@ public class PlayerBehavior : MonoBehaviour
         invulnerabilityDuration = 1f;
         health = 3; // will normally start with 3 hp
         weaponSelected = 0; // default weapon selected
-
-       
+        healthTracker = 3;
 
     }
 
@@ -61,6 +66,11 @@ public class PlayerBehavior : MonoBehaviour
 
         TurnOffInvulnerability();
 
+        if (healthTracker > health)
+        {
+            audioSource.PlayOneShot(damage);
+            healthTracker--;
+        }
         if (invulnerabilityOn)
         {
             sr.color = new Color(1f, 1f, 1f, 0.5f);
@@ -105,7 +115,7 @@ public class PlayerBehavior : MonoBehaviour
 
     private void Respawn()
     {
-       
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     private void SwitchWeapons()
@@ -180,7 +190,6 @@ public class PlayerBehavior : MonoBehaviour
         if (Input.GetKey("space"))
         {
             BM.Fire(weaponSelected, Vertical);
-
         }
     }
 
