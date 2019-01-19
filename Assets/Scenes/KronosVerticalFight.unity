@@ -119,6 +119,34 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1172513224}
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!1 &424994655
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 424994656}
+  m_Layer: 0
+  m_Name: CreditLocation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &424994656
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 424994655}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -22.3, y: 10.4, z: 0.036885604}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &845256820
 Prefab:
   m_ObjectHideFlags: 0
@@ -163,6 +191,17 @@ Prefab:
       propertyPath: bar
       value: 
       objectReference: {fileID: 373860806}
+    - target: {fileID: 114847270329310580, guid: 16cc01c10d89cae40a107bbcd70ab613,
+        type: 2}
+      propertyPath: CreditsLocation
+      value: 
+      objectReference: {fileID: 424994656}
+    - target: {fileID: 114847270329310580, guid: 16cc01c10d89cae40a107bbcd70ab613,
+        type: 2}
+      propertyPath: Credits
+      value: 
+      objectReference: {fileID: 1594600906633132, guid: e8edaa259a962ba419ab85f57216254f,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 16cc01c10d89cae40a107bbcd70ab613, type: 2}
   m_IsPrefabParent: 0

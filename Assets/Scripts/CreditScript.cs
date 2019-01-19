@@ -47,7 +47,7 @@ public class CreditScript : MonoBehaviour {
             switch (creditState)
             {
                 case 1:
-                    if (this.gameObject.transform.position.x >= -9.0)
+                    if (this.gameObject.transform.position.x >= -7.5)
                     {
                         this.Direction = new Vector2(-1, 0); // create new vector based on input combo
                         this.Direction.Normalize(); // normalize so that the direction is consistent

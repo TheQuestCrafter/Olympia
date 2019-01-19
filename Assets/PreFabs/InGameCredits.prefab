@@ -73,7 +73,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80fa34ade7a8d584cb89930f06309022, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Kronos: {fileID: 1051013427814544, guid: 0d5289c107bccf44587f412f95c4c262, type: 2}
+  Kronos: {fileID: 0}
 --- !u!212 &212836270216339178
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -108,7 +108,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 3579d5720ad048442ad30b7a708845ea, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
