@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BossScriptTest : MonoBehaviour
 {
@@ -26,6 +27,23 @@ public class BossScriptTest : MonoBehaviour
     GameObject bullet;
     public float hp;
     public GameObject explosionEffect;
+
+    [SerializeField]
+    private Image bar;
+
+    private float barLength;
+    private float startingHP;
+
+    private void Start()
+    {
+        startingHP = hp;
+    }
+
+    private void HealthBar()
+    {
+        barLength = (hp / startingHP);
+        bar.fillAmount = barLength;
+    }
 
     // Use this for initialization
     void Awake ()
@@ -58,14 +76,11 @@ public class BossScriptTest : MonoBehaviour
             {
                 player.GetComponent<PlayerBehavior>().Weapons[3] = true;
             }
-
-
             Destroy(this.gameObject);
             var expldi = (GameObject)Instantiate(explosionEffect, this.transform.position, this.transform.rotation);
-
-
-           
         }
+
+        HealthBar();
 
     }
 
