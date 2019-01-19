@@ -35,6 +35,12 @@ public class BossScriptTest : MonoBehaviour
     GameObject bullet;
     public float hp;
     public GameObject explosionEffect;
+
+    float SoundEffectStart, SoundEffectNext;
+
+    System.Random rand;
+
+
     
     [SerializeField]
     private Image bar;
@@ -44,6 +50,7 @@ public class BossScriptTest : MonoBehaviour
     private void Start()
     {
         startingHP = hp;
+
     }
 
     private void HealthBar()
@@ -62,6 +69,11 @@ public class BossScriptTest : MonoBehaviour
         }
         //cc2D = GetComponent<CircleCollider2D>();
         pc2D = GetComponent<PolygonCollider2D>();
+
+        rand = new System.Random();
+
+        //Random time to start
+        SoundEffectStart = rand.Next();
     }
 	
 	// Update is called once per frame
@@ -71,19 +83,29 @@ public class BossScriptTest : MonoBehaviour
         {
             //if (this.gameObject.tag == "Zeus")
             //{
-            //    player.GetComponent<PlayerBehavior>().Weapons[1] = true;
             //}
             //if (this.gameObject.tag == "Poseidon")
             //{
-            //    player.GetComponent<PlayerBehavior>().Weapons[2] = true;
             //}s
             //if (this.gameObject.tag == "Hades")
             //{
-            //    player.GetComponent<PlayerBehavior>().Weapons[3] = true;
+            
             //}
+
+            if(Time.time > SoundEffectNext)
+            {
+
+                //After Sound effect is played, generate new random. 
+                SoundEffectStart = rand.Next();
+                SoundEffectNext = Time.time + SoundEffectStart;
+            }
+
+
             audioSource.PlayOneShot(deathSound);
-            this.gameObject.SetActive(false);
+          
             var expldi = (GameObject)Instantiate(explosionEffect, this.transform.position, this.transform.rotation);
+
+            Destroy(this.gameObject);
         }
 
         HealthBar();
