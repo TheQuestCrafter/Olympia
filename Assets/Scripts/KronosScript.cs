@@ -16,6 +16,7 @@ public class KronosScript : MonoBehaviour
     System.Random rand;
 
     GameObject player;
+   
     public GameObject lavaWavePrefab;
     public Transform torch1, torch2;
     public GameObject LeftTorchPrefab, RightTorchPrefab;
@@ -78,7 +79,7 @@ public class KronosScript : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Time.time > HadesATK1NF)
+        if (Time.time > HadesATK1NF && bossScript.hp <= 0)
         {
             SpawnTorches();
             LeftTorch = GameObject.FindGameObjectWithTag("LeftTorch");
@@ -86,7 +87,7 @@ public class KronosScript : MonoBehaviour
 
         }
 
-        if (Time.time > HadesATK1_2NF)
+        if (Time.time > HadesATK1_2NF && bossScript.hp <= 0)
         {
 
             if (LeftTorch != null && RightTorch != null)
@@ -112,12 +113,12 @@ public class KronosScript : MonoBehaviour
 
         }
 
-        if (AttackZeus && Time.time > ZeusATKNF)
+        if (AttackZeus && Time.time > ZeusATKNF && bossScript.hp <= 0)
         {
             Attack2();
         }
 
-        if (Time.time > KronosTongueATKNF && !AttackZeus)
+        if (Time.time > KronosTongueATKNF && !AttackZeus && bossScript.hp <= 0)
         {
             Attack3();
 
