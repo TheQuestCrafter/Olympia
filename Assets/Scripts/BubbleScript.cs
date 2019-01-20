@@ -20,7 +20,7 @@ public class BubbleScript : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update ()
+	void FixedUpdate ()
     {
 		
 	}

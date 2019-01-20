@@ -47,24 +47,9 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1363122412770330
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4339428306151774}
-  m_Layer: 0
-  m_Name: TorchFire1Location
-  m_TagString: Enemy
-  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1701517240855206
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
@@ -79,7 +64,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &1960071647737516
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
@@ -95,34 +80,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1961440103426454
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4986523043957412}
-  m_Layer: 0
-  m_Name: TorchFire2Location
-  m_TagString: Enemy
-  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4339428306151774
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1363122412770330}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.6250001, y: -0.025000095, z: 0.0026041665}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4450577986492746}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!4 &4450577986492746
 Transform:
   m_ObjectHideFlags: 1
@@ -134,10 +91,6 @@ Transform:
   m_LocalScale: {x: 6, y: 6, z: 6}
   m_Children:
   - {fileID: 4465950272753464}
-  - {fileID: 4893109742360696}
-  - {fileID: 4577921297095668}
-  - {fileID: 4339428306151774}
-  - {fileID: 4986523043957412}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
@@ -150,7 +103,9 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4577921297095668}
+  - {fileID: 4893109742360696}
   m_Father: {fileID: 4450577986492746}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -160,12 +115,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1701517240855206}
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.013333295, y: -0.33, z: 0.010632178}
-  m_LocalScale: {x: 0.1666667, y: 0.1666667, z: 0.16666667}
+  m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: -0.013333302, y: -0.3300001, z: 0.010632178}
+  m_LocalScale: {x: 0.16666694, y: 0.16666694, z: 0.16666667}
   m_Children: []
-  m_Father: {fileID: 4450577986492746}
-  m_RootOrder: 2
+  m_Father: {fileID: 4465950272753464}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!4 &4893109742360696
 Transform:
@@ -174,25 +129,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1960071647737516}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.014, y: -0.508, z: 0}
+  m_LocalPosition: {x: -0.01400002, y: -0.5080002, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4450577986492746}
+  m_Father: {fileID: 4465950272753464}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4986523043957412
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1961440103426454}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.60833347, y: -0.024999937, z: 0.0026041665}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4450577986492746}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!60 &60294378448551850
 PolygonCollider2D:
   m_ObjectHideFlags: 1
@@ -411,8 +353,8 @@ MonoBehaviour:
   Vertical: 0
   lavaWavePrefab: {fileID: 1211149158451806, guid: d738298eb72b70247a0a6e331d53f6d1,
     type: 2}
-  torch1: {fileID: 4339428306151774}
-  torch2: {fileID: 4986523043957412}
+  torch1: {fileID: 0}
+  torch2: {fileID: 0}
   LeftTorchPrefab: {fileID: 1692413149439724, guid: 376c02559fbb1624daae3f29869d6211,
     type: 2}
   RightTorchPrefab: {fileID: 1422139720155262, guid: 7c8c6e2a0c39efd46aa7ad0c0e0051fd,
@@ -422,7 +364,6 @@ MonoBehaviour:
   KronosGunLocation: {fileID: 4577921297095668}
   CreditsLocation: {fileID: 0}
   Credits: {fileID: 1594600906633132, guid: e8edaa259a962ba419ab85f57216254f, type: 2}
-  credit: {fileID: 0}
   StartCredit: 0
 --- !u!114 &114693778408700114
 MonoBehaviour:
