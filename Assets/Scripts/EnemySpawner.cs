@@ -13,6 +13,8 @@ public class EnemySpawner : MonoBehaviour
     public float upperSpawnHeightLimit; // So enemy doesn't spawn outside of bounds Vertically
     public float lowerSpawnHeightLimit;
 
+    public float initialSpawnDelay; // How long to wait before starting to spawn the wave. Measured in seconds.
+    bool waveStarted; // required to prevent an endless wave.
     public float spawnTime;            // How long between each spawn in seconds.
     public float levelDuration; // in seconds
     float LevelEndTime; // The time for the level to end (Stop spawning enemies)
@@ -28,6 +30,8 @@ public class EnemySpawner : MonoBehaviour
 
     void Awake ()
     {
+        initialSpawnDelay = 3.5f;
+        waveStarted = false;
         EnemyChoice = 2;
         upperSpawnHeightLimit = 4.85f;
         lowerSpawnHeightLimit = -4.85f;
@@ -36,15 +40,23 @@ public class EnemySpawner : MonoBehaviour
 
     private void Start()
     {
-        LevelEndTime = Time.time + levelDuration;
-        InvokeRepeating("Spawn", 0, spawnTime);
+        LevelEndTime = Time.time + levelDuration + initialSpawnDelay;
+        //InvokeRepeating("Spawn", 0, spawnTime);
     }
 
     // Update is called once per frame
     void FixedUpdate ()
     {
         sceneTimeLeft = LevelEndTime - Time.time;
-		if(Time.time >= LevelEndTime)
+        if (!waveStarted)
+        {
+            if (Time.time >= initialSpawnDelay)
+            {
+                waveStarted = true;
+                InvokeRepeating("Spawn", 0, spawnTime);
+            }
+        }
+        if (Time.time >= LevelEndTime)
         {
             CancelInvoke();
         }
@@ -66,7 +78,7 @@ public class EnemySpawner : MonoBehaviour
             case 2:
                 {
                     var temp = Instantiate(EnemyTypes[2], generatedSpawn, EnemySpawnPoint.rotation, this.transform);
-                    enemiesList.Add(temp);
+                    //enemiesList.Add(temp);
                     //temp.GetComponent<EnemyBehavior>().
                     break;
                 }
