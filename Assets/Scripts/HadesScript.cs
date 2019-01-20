@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HadesScript : MonoBehaviour
 {
-
+    Animator anim;
     float Attack1FR, Attack1NF;
     float Attack1_2FR, Attack1_2NF;
     float Attack2FR, Attack2NF;
@@ -21,6 +21,8 @@ public class HadesScript : MonoBehaviour
     bool moveRight;
     Vector2 Direction;
     float speed;
+
+    private bool firing;
 
     float lavaSpeed;
 
@@ -45,8 +47,9 @@ public class HadesScript : MonoBehaviour
         Attack1_2NF = Time.time + Attack1_2FR;
         Attack2FR = 6f;
         Attack2NF = Time.time + Attack2FR;
-
+        anim = gameObject.GetComponent<Animator>();
         bossScript = GetComponent<BossScriptTest>();
+        firing = false;
 
     }
 
@@ -124,16 +127,17 @@ public class HadesScript : MonoBehaviour
 
     void Attack2()
     {
+        firing = false;
         if (Time.time >= Attack2NF)
         {
-
             var BigBomb = (GameObject)Instantiate(
             hadesBombPrefab,
             hadesGun.transform.position,
             this.gameObject.transform.rotation);
-
             Attack2NF = Time.time + Attack2FR;
+            firing = true;
         }
+        anim.SetBool("Firing", firing);
     }
 
     void Movement()
