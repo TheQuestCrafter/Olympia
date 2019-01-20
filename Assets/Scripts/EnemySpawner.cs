@@ -27,6 +27,7 @@ public class EnemySpawner : MonoBehaviour
     Vector3 generatedSpawn; // This is the coordinate of the generated spawn, contains the determinedSpawnHeight
 
     public float sceneTimeLeft;
+    private float delayTime;
 
     void Awake ()
     {
@@ -35,6 +36,7 @@ public class EnemySpawner : MonoBehaviour
         EnemyChoice = 2;
         upperSpawnHeightLimit = 4.85f;
         lowerSpawnHeightLimit = -4.85f;
+        delayTime = Time.time + 3f;
         rnd = new System.Random();
     }
 
@@ -48,14 +50,18 @@ public class EnemySpawner : MonoBehaviour
     void FixedUpdate ()
     {
         sceneTimeLeft = LevelEndTime - Time.time;
-        if (!waveStarted)
+        if (Time.time > delayTime)
         {
-            if (Time.time >= initialSpawnDelay)
+            if (!waveStarted)
             {
-                waveStarted = true;
-                InvokeRepeating("Spawn", 0, spawnTime);
+                if (Time.time >= initialSpawnDelay)
+                {
+                    waveStarted = true;
+                    InvokeRepeating("Spawn", 0, spawnTime);
+                }
             }
         }
+        
         if (Time.time >= LevelEndTime)
         {
             CancelInvoke();
