@@ -356,7 +356,7 @@ public class KronosScript : MonoBehaviour
 
                     KronosParent.gameObject.transform.Translate(Direction);
                     KronosTentacle.gameObject.GetComponent<KronosTentacleScript>().StartAnimation();
-                    KronosMoveTime = Time.time + 2f;
+                    KronosMoveTime = Time.time + 1f;
 
                     KronosMoveState++;
 

@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 95974359366042876}
   - component: {fileID: 114542528211597714}
   - component: {fileID: 61573553588932200}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Chronos Tentacle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59,9 +59,9 @@ GameObject:
   - component: {fileID: 114968489318241802}
   - component: {fileID: 114847270329310580}
   - component: {fileID: 82570902472040302}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Chronos
-  m_TagString: Untagged
+  m_TagString: Kronos
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74,7 +74,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4082909563596606}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ChronosGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}

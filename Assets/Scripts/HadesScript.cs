@@ -37,9 +37,9 @@ public class HadesScript : MonoBehaviour
             PlayerBehavior temp = FindObjectOfType<PlayerBehavior>();
             this.player = temp.gameObject;
         }
-        Attack1FR = 1f;
+        Attack1FR = 16f;
         Attack1NF = Time.time + Attack1FR;
-        Attack1_2FR = 10f;
+        Attack1_2FR = 15f;
         Attack1_2NF = Time.time + Attack1_2FR;
         Attack2FR = 6f;
         Attack2NF = Time.time + Attack2FR;
@@ -112,7 +112,7 @@ public class HadesScript : MonoBehaviour
         var torch_2 = (GameObject)Instantiate(RightTorchPrefab, torch2.transform.position, torch2.transform.rotation);
 
 
-        Attack1NF = Time.time + Attack1FR + 20f;
+        Attack1NF = Time.time + Attack1FR;
 
        
     }

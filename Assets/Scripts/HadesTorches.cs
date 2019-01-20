@@ -32,7 +32,7 @@ public class HadesTorches : MonoBehaviour
         //}
         cc2D = GetComponent<CapsuleCollider2D>();
         sr = GetComponent<SpriteRenderer>();
-        HP = 10f;
+        HP = 20f;
         Alive = true;
         Timer = 10f;
         TimeEnd = Time.time + Timer;

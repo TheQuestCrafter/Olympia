@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114325090143384298}
   - component: {fileID: 95945165501900034}
   - component: {fileID: 82691094418257604}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ZeusLargeBombPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}

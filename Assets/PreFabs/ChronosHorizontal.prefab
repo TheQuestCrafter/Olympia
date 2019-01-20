@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4450577986492746}
   m_Layer: 0
   m_Name: ChronosHorizontal
-  m_TagString: Untagged
+  m_TagString: Kronos
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40,9 +40,9 @@ GameObject:
   - component: {fileID: 114693778408700114}
   - component: {fileID: 114254686882261498}
   - component: {fileID: 82776011986914510}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Chronos
-  m_TagString: Untagged
+  m_TagString: Kronos
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55,7 +55,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4577921297095668}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ChronosGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,7 +74,8 @@ GameObject:
   - component: {fileID: 95114206694863342}
   - component: {fileID: 61101436166533882}
   - component: {fileID: 114289331742963674}
-  m_Layer: 0
+  - component: {fileID: 114737305361842440}
+  m_Layer: 10
   m_Name: Chronos Tentacle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -375,6 +376,8 @@ MonoBehaviour:
     type: 2}
   LightingBallPrefab: {fileID: 1540295101897834, guid: fc02191de4c22e0419d1313d522a3e98,
     type: 2}
+  HadesBigBomb: {fileID: 1395371305244398, guid: b24509ee6ed351d4385b0c09d3b2a6ef,
+    type: 2}
   KronosGunLocation: {fileID: 4577921297095668}
   CreditsLocation: {fileID: 0}
   Credits: {fileID: 1594600906633132, guid: e8edaa259a962ba419ab85f57216254f, type: 2}
@@ -412,6 +415,18 @@ MonoBehaviour:
   explosionEffect: {fileID: 1299146535993584, guid: d60805234b04c6d488c68eaa44eaec62,
     type: 2}
   bar: {fileID: 0}
+--- !u!114 &114737305361842440
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1960071647737516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a99b5fca0ab8be34a81335468b4894fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bb2D: {fileID: 0}
 --- !u!212 &212128035059190140
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -446,7 +461,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 084eb6c58db62da458ad2582b8b57a77, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

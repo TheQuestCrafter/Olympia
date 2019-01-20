@@ -21,6 +21,7 @@ TagManager:
   - Zeus
   - Poseidon
   - Fireplace
+  - Kronos
   layers:
   - Default
   - TransparentFX
