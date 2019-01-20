@@ -13,7 +13,6 @@ public class PoseidonScript : MonoBehaviour
 
     public GameObject RightTentacle, LeftTentacle;
     Rigidbody2D RTentacleRB2D, LTentacleRB2D;
-    Vector3 RTentacleShoulder, LTentacleShoulder;
     public TentacleState RTentacleState, LTentacleState; // The current state of the tentacles
     public float RTentacleNF, LTentacleNF; // Tentacle next fires for time.
     bool RTentacleReady, LTentacleReady;
@@ -22,7 +21,7 @@ public class PoseidonScript : MonoBehaviour
     PolygonCollider2D pc2D;
     public Transform poseidonGun;
     float Speed;
-    float NextFireBubble, FireRateBubble;
+    float NextFireBubble, FireRateBubble, fireBubbleTimeBeforeLaser;
     float NextFireLaser, FireRateLaser, FireIntervalLaser; // FireRate is time between individual bullets. FireInterval is time between the waves of attack
     bool PivotRight;
     float radius;
@@ -45,12 +44,8 @@ public class PoseidonScript : MonoBehaviour
             PlayerBehavior temp = FindObjectOfType<PlayerBehavior>();
             this.player = temp.gameObject;
         }
-        FireRateBubble = 2f;
-        NextFireBubble = Time.time + FireRateBubble + initialAttackDelay;
-
+        
         LTentacleState = RTentacleState = TentacleState.Stop;
-        LTentacleShoulder = new Vector3(-5.18f, 5.33f);
-        RTentacleShoulder = new Vector3(5.56f, 5.21f);
         RTentacleFR = 7.1f;
         LTentacleFR = 11.3f;
         RTentacleNF = Time.time + RTentacleFR + initialAttackDelay;
@@ -69,6 +64,10 @@ public class PoseidonScript : MonoBehaviour
 
         radius = 15f;
 
+        fireBubbleTimeBeforeLaser = 6;
+        FireRateBubble = 2f;
+        NextFireBubble = NextFireLaser - fireBubbleTimeBeforeLaser;
+
     }
 
     // Update is called once per frame
@@ -77,6 +76,7 @@ public class PoseidonScript : MonoBehaviour
 
         //Attack1();
         Attack2();
+
         if (Time.time > 10)
             Attack3();
 
@@ -97,25 +97,25 @@ public class PoseidonScript : MonoBehaviour
         {
             LTentacleState = TentacleState.Reset;
         }
+        
+            determineTentacleStateAction(RTentacleState, true);
+            determineTentacleStateAction(LTentacleState, false);
 
-
-        determineTentacleStateAction(RTentacleState, true);
-        determineTentacleStateAction(LTentacleState, false);
     }
 
-    void determineTentacleStateAction(TentacleState tentacleState, bool right) // right is the right tentacle
+    void determineTentacleStateAction(TentacleState tentacleState, bool right) // right is the right tentacle. if false, it is the left tentacle
     {
         if (RightTentacle.transform.rotation.z <= -0.42f && RTentacleState == TentacleState.Attack)
         {
             RTentacleState = TentacleState.Stop;
-            RTentacleNF = Time.time + (RTentacleFR / 2);
+            RTentacleNF = Time.time + (RTentacleFR / 2.5f);
             RTentacleReady = false;
         }
 
         if (LeftTentacle.transform.rotation.z >= 0.42f && LTentacleState == TentacleState.Attack)
         {
             LTentacleState = TentacleState.Stop;
-            LTentacleNF = Time.time + (LTentacleFR / 2);
+            LTentacleNF = Time.time + (LTentacleFR / 2.5f);
             LTentacleReady = false;
         }
 
@@ -135,11 +135,11 @@ public class PoseidonScript : MonoBehaviour
                 {
                     if(right)
                     {
-                        RightTentacle.transform.Rotate(Vector3.forward * -Speed);
+                        RightTentacle.transform.Rotate(Vector3.forward * -Speed * 0.2f);
                     }
                     else
                     {
-                        LeftTentacle.transform.Rotate(Vector3.forward * Speed);
+                        LeftTentacle.transform.Rotate(Vector3.forward * Speed * 0.2f);
                     }
                     break;
                 }
@@ -147,7 +147,7 @@ public class PoseidonScript : MonoBehaviour
                 {
                     if (right)
                     {
-                        RightTentacle.transform.Rotate(Vector3.forward * Speed * 0.35f);
+                        RightTentacle.transform.Rotate(Vector3.forward * Speed * 0.1f);
                         if (RightTentacle.transform.rotation.z >= 0.0966f)
                         {
                             RTentacleState = TentacleState.Stop;
@@ -157,7 +157,7 @@ public class PoseidonScript : MonoBehaviour
                     }
                     else
                     {
-                        LeftTentacle.transform.Rotate(Vector3.forward * -Speed * 0.35f);
+                        LeftTentacle.transform.Rotate(Vector3.forward * -Speed * 0.1f);
                         if (LeftTentacle.transform.rotation.z <= -0.0966f)
                         {
                             LTentacleState = TentacleState.Stop;
@@ -223,7 +223,8 @@ public class PoseidonScript : MonoBehaviour
                 new Vector2(projectileMoveDirection.x, projectileMoveDirection.y);
 
             // We should alter this time for balancing later
-            NextFireBubble = Time.time + FireRateBubble + 20;
+            NextFireBubble = Time.time + FireIntervalLaser; // FireRateBubble + 20;
+            //NextFireBubble = Time.time + FireIntervalLaser - fireBubbleTimeBeforeLaser;
 
             Destroy(proj, 7);
         }
