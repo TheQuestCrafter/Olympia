@@ -6,11 +6,12 @@ public class CreditScript : MonoBehaviour {
 
 
     bool StartCredit;
-
+    bool playedLaugh;
     private int creditState;
     private float creditTimeExit;
     private Vector2 Direction;
-
+    [SerializeField]
+    AudioSource laugh;
     public GameObject Kronos;
     // Use this for initialization
     void Awake ()
@@ -19,7 +20,7 @@ public class CreditScript : MonoBehaviour {
         //bossScript = GetComponent<BossScriptTest>();
         StartCredit = false;
         creditState = 1;
-
+        playedLaugh = false;
         if(Kronos == null)
         {
            Kronos = FindObjectOfType<KronosScript>().gameObject;
@@ -70,15 +71,19 @@ public class CreditScript : MonoBehaviour {
 
                     break;
                 case 3:
-
+                    
                     if (Time.time > creditTimeExit)
                     {
                         this.Direction = new Vector2(1, 0); // create new vector based on input combo
                         this.Direction.Normalize(); // normalize so that the direction is consistent
                         this.gameObject.GetComponent<Rigidbody2D>().AddForce(Direction * 2f);
                         Destroy(this.gameObject, 8f);
+                        if (!playedLaugh)
+                            laugh.Play();
+                        playedLaugh = true;
                     }
-
+                    
+                    
                     break;
 
             }
