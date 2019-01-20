@@ -10,7 +10,6 @@ public class PoseidonScript : MonoBehaviour
     GameObject player;
     public GameObject BubblePrefab;
     public GameObject WaterBeam;
-
     public GameObject RightTentacle, LeftTentacle;
     Rigidbody2D RTentacleRB2D, LTentacleRB2D;
     public TentacleState RTentacleState, LTentacleState; // The current state of the tentacles
@@ -45,7 +44,6 @@ public class PoseidonScript : MonoBehaviour
             PlayerBehavior temp = FindObjectOfType<PlayerBehavior>();
             this.player = temp.gameObject;
         }
-        
         LTentacleState = RTentacleState = TentacleState.Stop;
         RTentacleFR = 7.1f;
         LTentacleFR = 11.3f;
@@ -206,10 +204,8 @@ public class PoseidonScript : MonoBehaviour
 
     void Attack3()
     {
-       
         if (Time.time > FireIntervalLaser && Time.time > NextFireLaser)
         {
-
             float projectileDirXposition = poseidonGun.position.x + Mathf.Sin((currentAngle * Mathf.PI) / 180) * radius;
             float projectileDirYposition = poseidonGun.position.y + Mathf.Cos((currentAngle * Mathf.PI) / 180) * radius;
 
@@ -228,10 +224,8 @@ public class PoseidonScript : MonoBehaviour
                 NextFireLaser = Time.time + FireIntervalLaser;
                 currentAngle = startAngle;
             }
-            
             Destroy(proj, 3.5f);
         }
-
         
     }
 
