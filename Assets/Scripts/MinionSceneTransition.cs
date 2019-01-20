@@ -2,8 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MinionSceneTransition : MonoBehaviour {
+
+    [SerializeField]
+    private Image image;
+    private Color tempColor;
 
     [SerializeField]
     private GameObject spawner;
@@ -20,6 +25,10 @@ public class MinionSceneTransition : MonoBehaviour {
     {
         countdownTime = transitionTime;
         spawnerScript = spawner.GetComponent<EnemySpawner>();
+
+        tempColor = image.color;
+        tempColor.a = 0f;
+        image.color = tempColor;
     }
 
     // Update is called once per frame
@@ -34,7 +43,16 @@ public class MinionSceneTransition : MonoBehaviour {
     private void SceneTransition()
     {
         countdownTime -= Time.deltaTime;
-        if (countdownTime <= 0)
+        if (countdownTime + 3 <= 3)
+        {
+            if (tempColor.a <= 1f)
+            {
+                tempColor.a += 0.2f * Time.deltaTime;
+            }
+
+            image.color = tempColor;
+        }
+        if (countdownTime + 3 <= 0)
         {
             SceneManager.LoadScene(nextScene);
         }
