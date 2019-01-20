@@ -47,7 +47,7 @@ public class MinionSceneTransition : MonoBehaviour {
         {
             if (tempColor.a <= 1f)
             {
-                tempColor.a += 0.2f * Time.deltaTime;
+                tempColor.a += 0.33f * Time.deltaTime;
             }
 
             image.color = tempColor;
