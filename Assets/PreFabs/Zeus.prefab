@@ -531,7 +531,7 @@ MonoBehaviour:
   deathSound: {fileID: 8300000, guid: fb6d6cc392d05a447a1892543e8eac74, type: 3}
   damageSound: {fileID: 8300000, guid: 2e4f84d3d3de6154ca196dd49ce51e26, type: 3}
   idleSound: {fileID: 0}
-  hp: 1000
+  hp: 800
   explosionEffect: {fileID: 1299146535993584, guid: d60805234b04c6d488c68eaa44eaec62,
     type: 2}
   bar: {fileID: 0}

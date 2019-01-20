@@ -26,7 +26,7 @@ public class ZeusScript : MonoBehaviour
         anim = gameObject.GetComponent<Animator>();
 
         FireNextBullet = 1f;
-
+        SpawnNextBullet = Time.time + 3f;
         initialAttackDelay = 6f;
         bossFightStarted = false;
     }
@@ -42,7 +42,7 @@ public class ZeusScript : MonoBehaviour
             }
         }
 
-        if(bossFightStarted)
+        if(Time.time > SpawnNextBullet)
             Attack1();
         
     }
