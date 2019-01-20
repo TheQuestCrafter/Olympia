@@ -38,7 +38,7 @@ public class HadesBigBombScript : MonoBehaviour
 
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         Direction = new Vector2(0, -1);
         Direction.Normalize();

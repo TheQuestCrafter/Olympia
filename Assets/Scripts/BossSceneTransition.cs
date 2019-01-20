@@ -23,7 +23,7 @@ public class BossSceneTransition : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update ()
+	void FixedUpdate ()
     {
         if (bossScript.hp <= 0)
         {

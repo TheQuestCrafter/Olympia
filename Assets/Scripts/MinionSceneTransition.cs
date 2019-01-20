@@ -23,7 +23,7 @@ public class MinionSceneTransition : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (spawnerScript.sceneTimeLeft <= 0)
         {

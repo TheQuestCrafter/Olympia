@@ -17,7 +17,7 @@ public class FadeIn : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update () {
+    void FixedUpdate () {
         if (tempColor.a >= 0f)
         {
             tempColor.a -= 0.2f * Time.deltaTime;
