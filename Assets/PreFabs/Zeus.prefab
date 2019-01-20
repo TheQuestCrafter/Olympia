@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 4917704627879794}
   m_Layer: 0
   m_Name: Zeus
-  m_TagString: Zeus
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -531,7 +531,7 @@ MonoBehaviour:
   deathSound: {fileID: 8300000, guid: fb6d6cc392d05a447a1892543e8eac74, type: 3}
   damageSound: {fileID: 8300000, guid: 2e4f84d3d3de6154ca196dd49ce51e26, type: 3}
   idleSound: {fileID: 0}
-  hp: 100
+  hp: 1000
   explosionEffect: {fileID: 1299146535993584, guid: d60805234b04c6d488c68eaa44eaec62,
     type: 2}
   bar: {fileID: 0}

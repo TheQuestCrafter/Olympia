@@ -21,7 +21,8 @@ GameObject:
   - component: {fileID: 4988214416903756}
   - component: {fileID: 212493949094745792}
   - component: {fileID: 60300970551909780}
-  m_Layer: 0
+  - component: {fileID: 114805566106096366}
+  m_Layer: 10
   m_Name: Tentacle Right - Olympia
   m_TagString: RightTentacle
   m_Icon: {fileID: 0}
@@ -123,6 +124,17 @@ PolygonCollider2D:
       - {x: 0.00057690963, y: -0.99086034}
       - {x: 0.033965193, y: -0.9041767}
       - {x: 0.060816944, y: -0.74946856}
+--- !u!114 &114805566106096366
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1001521841967874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0610c600d4f0b8b4ba7dc70b0de44335, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212493949094745792
 SpriteRenderer:
   m_ObjectHideFlags: 1

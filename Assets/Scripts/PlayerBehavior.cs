@@ -62,7 +62,7 @@ public class PlayerBehavior : MonoBehaviour
 
         Fire();
 
-        SwitchWeapons();
+        
 
         TurnOffInvulnerability();
 
@@ -97,6 +97,12 @@ public class PlayerBehavior : MonoBehaviour
 
     }
 
+    public void Update()
+    {
+        SwitchWeapons();
+
+    }
+
     private void UnlockWeapons()
     {
        if(SceneManager.GetActiveScene().buildIndex >= 3)
@@ -120,7 +126,8 @@ public class PlayerBehavior : MonoBehaviour
 
     private void SwitchWeapons()
     {
-        if (Input.GetKeyDown(KeyCode.R))
+       // if (Input.GetKeyDown(KeyCode.R)
+       if(Input.GetKeyDown(KeyCode.R))
         {
             if (weaponSelected == 0 && Weapons[1] == true)
             {

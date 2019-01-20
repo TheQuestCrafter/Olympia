@@ -29,6 +29,7 @@ public class PoseidonScript : MonoBehaviour
     System.Random rand;
     float currentAngle, startAngle, endAngle;
 
+    bool ShootingBubble;
     float initialAttackDelay; // To allow the scene transition to fade in. One delay for all attack Types
 
     // Use this for initialization
@@ -68,14 +69,14 @@ public class PoseidonScript : MonoBehaviour
         FireRateBubble = 2f;
         NextFireBubble = NextFireLaser - fireBubbleTimeBeforeLaser;
 
+        ShootingBubble = true;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-
-        //Attack1();
-        Attack2();
+        if(Time.time > NextFireBubble)
+            Attack2();
 
         if (Time.time > 10)
             Attack3();
@@ -87,6 +88,7 @@ public class PoseidonScript : MonoBehaviour
         else if (!RTentacleReady && Time.time > RTentacleNF && RTentacleState == TentacleState.Stop)
         {
             RTentacleState = TentacleState.Reset;
+            ShootingBubble = true;
         }
 
         if (LTentacleReady && Time.time > LTentacleNF)
@@ -96,6 +98,7 @@ public class PoseidonScript : MonoBehaviour
         else if (!LTentacleReady && Time.time > LTentacleNF && LTentacleState == TentacleState.Stop)
         {
             LTentacleState = TentacleState.Reset;
+            ShootingBubble = true;
         }
         
             determineTentacleStateAction(RTentacleState, true);
@@ -170,40 +173,7 @@ public class PoseidonScript : MonoBehaviour
         }
     }
 
-    void Attack1()
-    {
-        //int temp = rand.Next(2);
-        //if (RightTentacle.transform.rotation.z >= 11.30)
-        //    PivotRight = false;
-        //else if (RightTentacle.transform.rotation.z <= -49)
-        //    PivotRight = true;
 
-
-        if (RightTentacle.transform.eulerAngles.z >= 220)
-        {
-            RightTentacle.transform.Rotate(-Direction * Speed);
-            //if (RightTentacle.transform.eulerAngles.z >= 11.30)
-            //{
-            //    PivotRight = false;
-            //}
-            //RightTentacle.transform.Rotate(new Vector3(0, 0, -1) * Speed * Time.deltaTime);
-            //LeftTentacle.transform.Rotate(new Vector3(0, 0, 1) * Speed * Time.deltaTime);
-        }
-        //else if (RightTentacle.transform.eulerAngles.z <= 11.30)
-        //{
-        //    RightTentacle.transform.Rotate(Direction * Speed);
-        //    if (RightTentacle.transform.eulerAngles.z <= -49)
-        //    {
-        //        PivotRight = true;
-        //    }
-
-
-        //    RightTentacle.transform.Rotate(new Vector3(0, 0, -1) * Speed * Time.deltaTime);
-        //}
-
-
-
-    }
     void Attack2()
     {
         if (Time.time > NextFireBubble)
@@ -225,6 +195,8 @@ public class PoseidonScript : MonoBehaviour
             // We should alter this time for balancing later
             NextFireBubble = Time.time + FireIntervalLaser; // FireRateBubble + 20;
             //NextFireBubble = Time.time + FireIntervalLaser - fireBubbleTimeBeforeLaser;
+
+
 
             Destroy(proj, 7);
         }
@@ -256,9 +228,11 @@ public class PoseidonScript : MonoBehaviour
                 NextFireLaser = Time.time + FireIntervalLaser;
                 currentAngle = startAngle;
             }
-
+            
             Destroy(proj, 3.5f);
         }
+
+        
     }
 
 }
