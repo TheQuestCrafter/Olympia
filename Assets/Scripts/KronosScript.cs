@@ -218,19 +218,19 @@ public class KronosScript : MonoBehaviour
                 proj.GetComponent<Rigidbody2D>().velocity =
                     new Vector2(projectileMoveDirection.x, projectileMoveDirection.y);
 
-                int temp2 = rand.Next(240, 300);
+                //int temp2 = rand.Next(240, 300);
 
-                float angle2 = (float)temp2;
+                //float angle2 = (float)temp2;
 
-                float projectileDirXposition2 = KronosGunLocation.transform.position.x + Mathf.Sin((angle2 * Mathf.PI) / 180) * 5f;
-                float projectileDirYposition2 = KronosGunLocation.transform.position.y + Mathf.Cos((angle2 * Mathf.PI) / 180) * 5f;
+                //float projectileDirXposition2 = KronosGunLocation.transform.position.x + Mathf.Sin((angle2 * Mathf.PI) / 180) * 5f;
+                //float projectileDirYposition2 = KronosGunLocation.transform.position.y + Mathf.Cos((angle2 * Mathf.PI) / 180) * 5f;
 
-                Vector3 projectileVector2 = new Vector3(projectileDirXposition2, projectileDirYposition2);
-                Vector3 projectileMoveDirection2 = (projectileVector2 - KronosGunLocation.transform.position).normalized * 2f;
+                //Vector3 projectileVector2 = new Vector3(projectileDirXposition2, projectileDirYposition2);
+                //Vector3 projectileMoveDirection2 = (projectileVector2 - KronosGunLocation.transform.position).normalized * 2f;
 
-                var proj2 = Instantiate(HadesBigBomb, KronosGunLocation.transform.position, Quaternion.identity);
-                proj2.GetComponent<Rigidbody2D>().velocity =
-                    new Vector2(projectileMoveDirection2.x, projectileMoveDirection2.y);
+                //var proj2 = Instantiate(HadesBigBomb, KronosGunLocation.transform.position, Quaternion.identity);
+                //proj2.GetComponent<Rigidbody2D>().velocity =
+                //    new Vector2(projectileMoveDirection2.x, projectileMoveDirection2.y);
 
                 AttackZeus = false;
 
