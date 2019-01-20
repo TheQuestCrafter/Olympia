@@ -41,9 +41,9 @@ public class HadesScript : MonoBehaviour
             PlayerBehavior temp = FindObjectOfType<PlayerBehavior>();
             this.player = temp.gameObject;
         }
-        Attack1FR = 16f;
+        Attack1FR = 13f;
         Attack1NF = Time.time + Attack1FR;
-        Attack1_2FR = 13f;
+        Attack1_2FR = 12.9f;
         Attack1_2NF = Time.time + Attack1_2FR;
         Attack2FR = 6f;
         Attack2NF = Time.time + Attack2FR;
@@ -159,5 +159,9 @@ public class HadesScript : MonoBehaviour
 
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        player.GetComponent<PlayerBehavior>().health--;
+    }
 
 }

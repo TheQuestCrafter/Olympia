@@ -686,7 +686,7 @@ MonoBehaviour:
   lowerSpawnHeightLimit: 0
   initialSpawnDelay: 0
   spawnTime: 0.35
-  levelDuration: 60
+  levelDuration: 10
   sceneTimeLeft: 0
 --- !u!4 &1403859931
 Transform:
