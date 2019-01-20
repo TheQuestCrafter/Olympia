@@ -11,6 +11,10 @@ public class MinionSceneTransition : MonoBehaviour {
     private Color tempColor;
 
     [SerializeField]
+    private AudioSource musicBox;
+    private float musicBoxVolume;
+
+    [SerializeField]
     private GameObject spawner;
     private EnemySpawner spawnerScript;
 
@@ -29,6 +33,7 @@ public class MinionSceneTransition : MonoBehaviour {
         tempColor = image.color;
         tempColor.a = 0f;
         image.color = tempColor;
+        musicBoxVolume = musicBox.volume;
     }
 
     // Update is called once per frame
@@ -49,7 +54,7 @@ public class MinionSceneTransition : MonoBehaviour {
             {
                 tempColor.a += 0.33f * Time.deltaTime;
             }
-
+            musicBox.volume -= (musicBoxVolume / 3f) * Time.deltaTime;
             image.color = tempColor;
         }
         if (countdownTime + 3 <= 0)

@@ -422,6 +422,11 @@ Prefab:
       propertyPath: nextScene
       value: KronosVerticalFight
       objectReference: {fileID: 0}
+    - target: {fileID: 114369176185246204, guid: 446dfad03d6d8b949ad95fb8b8abbbed,
+        type: 2}
+      propertyPath: musicBox
+      value: 
+      objectReference: {fileID: 2057061362}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 446dfad03d6d8b949ad95fb8b8abbbed, type: 2}
   m_IsPrefabParent: 0
@@ -974,7 +979,7 @@ Transform:
   m_LocalScale: {x: 7, y: 7, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1762923239
 GameObject:
@@ -1093,3 +1098,8 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 14bc0dd372b6e984693bf384480d4618, type: 2}
   m_IsPrefabParent: 0
+--- !u!82 &2057061362 stripped
+AudioSource:
+  m_PrefabParentObject: {fileID: 82144832598655566, guid: 14bc0dd372b6e984693bf384480d4618,
+    type: 2}
+  m_PrefabInternal: {fileID: 2057061361}

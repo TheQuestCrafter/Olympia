@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/KronosVerticalFight.unity
     guid: ff0dfcdfbd404474b874da045185677d
+  - enabled: 1
+    path: Assets/Scenes/VictoryScene.unity
+    guid: 6e5dd4d0bbcf7044597ef7d2bd438aeb
   m_configObjects: {}

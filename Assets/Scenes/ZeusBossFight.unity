@@ -221,6 +221,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 1d79ad5c51b1b6943941804d4977d63a,
         type: 3}
+    - target: {fileID: 1053934509137088, guid: be8a7fbf698cd2140a6088f83115056c, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: be8a7fbf698cd2140a6088f83115056c, type: 2}
   m_IsPrefabParent: 0
@@ -658,6 +662,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bc1424d8b411bab4d9f15c5a1d316938, type: 2}
   m_IsPrefabParent: 0
+--- !u!82 &1481855078 stripped
+AudioSource:
+  m_PrefabParentObject: {fileID: 82144832598655566, guid: 14bc0dd372b6e984693bf384480d4618,
+    type: 2}
+  m_PrefabInternal: {fileID: 1766101925}
 --- !u!1001 &1766101925
 Prefab:
   m_ObjectHideFlags: 0
@@ -811,6 +820,11 @@ Prefab:
       propertyPath: image
       value: 
       objectReference: {fileID: 1061106733}
+    - target: {fileID: 114369176185246204, guid: 446dfad03d6d8b949ad95fb8b8abbbed,
+        type: 2}
+      propertyPath: musicBox
+      value: 
+      objectReference: {fileID: 1481855078}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 446dfad03d6d8b949ad95fb8b8abbbed, type: 2}
   m_IsPrefabParent: 0
