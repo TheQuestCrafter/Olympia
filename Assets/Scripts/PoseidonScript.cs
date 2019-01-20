@@ -30,9 +30,14 @@ public class PoseidonScript : MonoBehaviour
     System.Random rand;
     float currentAngle, startAngle, endAngle;
 
+    float initialAttackDelay; // To allow the scene transition to fade in. One delay for all attack Types
+
     // Use this for initialization
     void Awake()
     {
+        // INITIAL ATTACK DELAY DIRECTLY BELOW
+        initialAttackDelay = 3.5f;
+
         RTentacleRB2D = RightTentacle.GetComponent<Rigidbody2D>();
         LTentacleRB2D = LeftTentacle.GetComponent<Rigidbody2D>();
         if (this.player == null)
@@ -41,20 +46,20 @@ public class PoseidonScript : MonoBehaviour
             this.player = temp.gameObject;
         }
         FireRateBubble = 2f;
-        NextFireBubble = Time.time + FireRateBubble;
+        NextFireBubble = Time.time + FireRateBubble + initialAttackDelay;
 
         LTentacleState = RTentacleState = TentacleState.Stop;
         LTentacleShoulder = new Vector3(-5.18f, 5.33f);
         RTentacleShoulder = new Vector3(5.56f, 5.21f);
         RTentacleFR = 7.1f;
         LTentacleFR = 11.3f;
-        RTentacleNF = Time.time + RTentacleFR;
-        LTentacleNF = Time.time + LTentacleFR;
+        RTentacleNF = Time.time + RTentacleFR + initialAttackDelay;
+        LTentacleNF = Time.time + LTentacleFR + initialAttackDelay;
         RTentacleReady = LTentacleReady = true;
 
         FireIntervalLaser = 12f;
         FireRateLaser = 0.15f;
-        NextFireLaser = Time.time + FireRateLaser;
+        NextFireLaser = Time.time + FireRateLaser + initialAttackDelay;
         rand = new System.Random();
         Speed = 3f;
         startAngle = currentAngle = 260;
