@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class WeaponSelectUI : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class WeaponSelectUI : MonoBehaviour
     Image poseidonShot;
     [SerializeField]
     Image hadesShot;
+    [SerializeField]
+    Image R;
     // Use this for initialization
     void Start()
     {
@@ -62,5 +65,10 @@ public class WeaponSelectUI : MonoBehaviour
             poseidonShot.gameObject.SetActive(false);
             hadesShot.gameObject.SetActive(true);
         }
+        if (SceneManager.GetActiveScene().buildIndex >= 3)
+        {
+            R.gameObject.SetActive(true);
+        }
     }
+ 
 }
