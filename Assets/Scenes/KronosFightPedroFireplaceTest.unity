@@ -364,7 +364,7 @@ GameObject:
   m_Layer: 0
   m_Name: TorchFire2Location
   m_TagString: Enemy
-  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -459,7 +459,7 @@ GameObject:
   m_Layer: 0
   m_Name: TorchFire1Location
   m_TagString: Enemy
-  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -659,7 +659,7 @@ Prefab:
     - target: {fileID: 114693778408700114, guid: 0d5289c107bccf44587f412f95c4c262,
         type: 2}
       propertyPath: hp
-      value: 100
+      value: 900
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0d5289c107bccf44587f412f95c4c262, type: 2}
