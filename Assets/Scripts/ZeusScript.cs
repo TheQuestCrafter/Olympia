@@ -12,7 +12,9 @@ public class ZeusScript : MonoBehaviour
     bool LockedOn;
     float SpawnNextBullet, FireNextBullet;
     System.Random rand;
-    
+
+    float initialAttackDelay; // To allow the scene transition to fade in
+    bool bossFightStarted; // True after the initialAttackDelay has passed.
 
     // Use this for initialization
     void Awake()
@@ -28,12 +30,24 @@ public class ZeusScript : MonoBehaviour
         FireNextBullet = 1f;
         rand = new System.Random();
         LockedOn = false;
+
+        initialAttackDelay = 3.5f;
+        bossFightStarted = false;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        Attack1();
+        if(!bossFightStarted)
+        {
+            if(Time.time >= initialAttackDelay)
+            {
+                bossFightStarted = true;
+            }
+        }
+
+        if(bossFightStarted)
+            Attack1();
     }
 
     void Attack1()

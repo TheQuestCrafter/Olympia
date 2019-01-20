@@ -13,6 +13,9 @@ public class ZeusHandScript : MonoBehaviour
     public float bulletSpeed;
     public float bulletLife; // in seconds
 
+    float initialAttackDelay; // To allow the scene transition to fade in
+    bool bossFightStarted; // True after the initialAttackDelay has passed.
+
 
     // Use this for initialization
     void Awake()
@@ -22,12 +25,23 @@ public class ZeusHandScript : MonoBehaviour
         bulletSpeed = 400;
         bulletLife = 3f;
 
+        initialAttackDelay = 3.5f;
+        bossFightStarted = false;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        Attack();
+        if (!bossFightStarted)
+        {
+            if (Time.time >= initialAttackDelay)
+            {
+                bossFightStarted = true;
+            }
+        }
+
+        if (bossFightStarted)
+            Attack();
     }
 
     void Attack()
