@@ -11,6 +11,7 @@ public class FireplaceScript : MonoBehaviour
     float nextFireExtinguish;
     public float fireDuration; // in seconds
     public float waterPenalty; // how much time (in seconds) should be subtracted from the fire duration due to being hit by water
+    private Color tempColor;
     bool fireOn;
 
 	// Use this for initialization
@@ -22,6 +23,9 @@ public class FireplaceScript : MonoBehaviour
         fireOn = false;
         fireDuration = 10f; // default, testing value
         waterPenalty = 0.05f; // default, testing value. Really low to compensate for water cannon's fast fire rate
+
+
+       
 
 	}
 
@@ -61,4 +65,6 @@ public class FireplaceScript : MonoBehaviour
             fireplaceOnObject.GetComponent<SpriteRenderer>().enabled = false;
         }
     }
+
+ 
 }

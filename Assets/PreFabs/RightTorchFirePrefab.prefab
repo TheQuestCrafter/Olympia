@@ -186,8 +186,8 @@ MonoBehaviour:
   sr: {fileID: 0}
   lavaWavePrefab: {fileID: 1211149158451806, guid: d738298eb72b70247a0a6e331d53f6d1,
     type: 2}
-  HP: 0
-  Alive: 0
+  HP: 10
+  Alive: 1
   TimeEnd: 0
 --- !u!212 &212411713371643754
 SpriteRenderer:
@@ -223,7 +223,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 50f7402adbc80e0469684258736a5ab2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
