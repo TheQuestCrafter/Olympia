@@ -51,6 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28002b5ebde925f48b5b9d1601683899, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  image: {fileID: 0}
   spawner: {fileID: 0}
-  transitionTime: 5
+  transitionTime: 3
   nextScene: HadesBossFight
