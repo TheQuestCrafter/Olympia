@@ -46,14 +46,14 @@ public class PoseidonScript : MonoBehaviour
         LTentacleState = RTentacleState = TentacleState.Stop;
         LTentacleShoulder = new Vector3(-5.18f, 5.33f);
         RTentacleShoulder = new Vector3(5.56f, 5.21f);
-        RTentacleFR = 7.1f;
+        RTentacleFR = 3f; // 7.1f;
         LTentacleFR = 11.3f;
         RTentacleNF = Time.time + RTentacleFR;
         LTentacleNF = Time.time + LTentacleFR;
         RTentacleReady = LTentacleReady = true;
 
         FireIntervalLaser = 12f;
-        FireRateLaser = 0.01f;
+        FireRateLaser = 0.15f;
         NextFireLaser = Time.time + FireRateLaser;
         rand = new System.Random();
         Speed = 3f;
@@ -83,6 +83,7 @@ public class PoseidonScript : MonoBehaviour
         {
             RTentacleState = TentacleState.Reset;
         }
+
         if (LTentacleReady && Time.time > LTentacleNF)
         {
             LTentacleState = TentacleState.Attack;
@@ -95,7 +96,7 @@ public class PoseidonScript : MonoBehaviour
 
     void determineTentacleStateAction(TentacleState tentacleState, bool right) // right is the right tentacle
     {
-        if (RightTentacle.gameObject.transform.rotation.z <= -60)
+        if (RightTentacle.transform.rotation.z <= -0.42f)
         {
             RTentacleState = TentacleState.Stop;
             RTentacleNF = Time.time + RTentacleFR;
@@ -109,7 +110,7 @@ public class PoseidonScript : MonoBehaviour
                     // Tentacle doesn't move. Can be at either end point
                     if(right && !RTentacleReady)
                     {
-                        RightTentacle.transform.Rotate(new Vector3(0, 0, -60f));
+                        //RightTentacle.transform.Rotate(new Vector3(0, 0, -55.5f));
                     }
                    
                     break;
@@ -239,7 +240,7 @@ public class PoseidonScript : MonoBehaviour
                 new Vector2(projectileMoveDirection.x, projectileMoveDirection.y);
 
             NextFireLaser = Time.time + FireRateLaser;
-            currentAngle -= 1f;
+            currentAngle -= 3f;
 
             if(currentAngle <= endAngle)
             {
