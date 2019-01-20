@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ZeusScript : MonoBehaviour
 {
-
+    Animator anim;
     public GameObject LBullet;
     GameObject player;
     public Transform zeusGun;
@@ -24,6 +24,8 @@ public class ZeusScript : MonoBehaviour
             PlayerBehavior temp = FindObjectOfType<PlayerBehavior>();
             this.player = temp.gameObject;
         }
+
+        anim = gameObject.GetComponent<Animator>();
 
         radius = 5f;
 
@@ -48,11 +50,12 @@ public class ZeusScript : MonoBehaviour
 
         if(bossFightStarted)
             Attack1();
+        
     }
 
     void Attack1()
     {
-
+        anim.SetBool("Firing", true);
 
         if (Time.time > SpawnNextBullet)
         {
@@ -69,11 +72,11 @@ public class ZeusScript : MonoBehaviour
             var proj = Instantiate(LBullet, zeusGun.position, Quaternion.identity);
             //proj.GetComponent<Rigidbody2D>().velocity =
             //    new Vector2(projectileMoveDirection.x, projectileMoveDirection.y);
-
+            
 
 
             SpawnNextBullet = Time.time + FireNextBullet;
-
+            anim.SetBool("Firing", false);
         }
 
 
