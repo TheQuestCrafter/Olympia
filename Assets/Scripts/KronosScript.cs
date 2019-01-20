@@ -194,7 +194,7 @@ public class KronosScript : MonoBehaviour
                 {
                     this.Direction = new Vector2(-1, 0); // create new vector based on input combo
                     this.Direction.Normalize(); // normalize so that the direction is consistent
-                    this.gameObject.GetComponent<Rigidbody2D>().AddForce(Direction * 2f);
+                    //this.gameObject.GetComponent<Rigidbody2D>().AddForce(Direction * 2f);
 
                 }
                 else
