@@ -113,6 +113,22 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &154324766 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1960071647737516, guid: 0d5289c107bccf44587f412f95c4c262,
+    type: 2}
+  m_PrefabInternal: {fileID: 1571557888}
+--- !u!114 &154324771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 154324766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a99b5fca0ab8be34a81335468b4894fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &198402032
 Prefab:
   m_ObjectHideFlags: 0
@@ -497,6 +513,11 @@ Prefab:
       propertyPath: KronosParent
       value: 
       objectReference: {fileID: 293555211}
+    - target: {fileID: 114254686882261498, guid: 0d5289c107bccf44587f412f95c4c262,
+        type: 2}
+      propertyPath: KronosTentacle
+      value: 
+      objectReference: {fileID: 154324766}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0d5289c107bccf44587f412f95c4c262, type: 2}
   m_IsPrefabParent: 0
