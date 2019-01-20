@@ -46,7 +46,7 @@ public class PoseidonScript : MonoBehaviour
         LTentacleState = RTentacleState = TentacleState.Stop;
         LTentacleShoulder = new Vector3(-5.18f, 5.33f);
         RTentacleShoulder = new Vector3(5.56f, 5.21f);
-        RTentacleFR = 3f; // 7.1f;
+        RTentacleFR = 7.1f;
         LTentacleFR = 11.3f;
         RTentacleNF = Time.time + RTentacleFR;
         LTentacleNF = Time.time + LTentacleFR;
@@ -88,6 +88,10 @@ public class PoseidonScript : MonoBehaviour
         {
             LTentacleState = TentacleState.Attack;
         }
+        else if (!LTentacleReady && Time.time > LTentacleNF && LTentacleState == TentacleState.Stop)
+        {
+            LTentacleState = TentacleState.Reset;
+        }
 
 
         determineTentacleStateAction(RTentacleState, true);
@@ -96,11 +100,18 @@ public class PoseidonScript : MonoBehaviour
 
     void determineTentacleStateAction(TentacleState tentacleState, bool right) // right is the right tentacle
     {
-        if (RightTentacle.transform.rotation.z <= -0.42f)
+        if (RightTentacle.transform.rotation.z <= -0.42f && RTentacleState == TentacleState.Attack)
         {
             RTentacleState = TentacleState.Stop;
-            RTentacleNF = Time.time + RTentacleFR;
+            RTentacleNF = Time.time + (RTentacleFR / 2);
             RTentacleReady = false;
+        }
+
+        if (LeftTentacle.transform.rotation.z >= 0.42f && LTentacleState == TentacleState.Attack)
+        {
+            LTentacleState = TentacleState.Stop;
+            LTentacleNF = Time.time + (LTentacleFR / 2);
+            LTentacleReady = false;
         }
 
         switch (tentacleState)
@@ -119,21 +130,11 @@ public class PoseidonScript : MonoBehaviour
                 {
                     if(right)
                     {
-                        //RightTentacle.transform.Rotate()
-                        //RightTentacle.transform.Rotate(RightTentacle.transform.right, -Direction.x * Speed);
-                        //RTentacleRB2D.transform.Rotate(RightTentacle.transform.right, -Direction.x * Speed);
-
                         RightTentacle.transform.Rotate(Vector3.forward * -Speed);
-                        
                     }
                     else
                     {
-                        LeftTentacle.transform.Rotate(LTentacleShoulder, Direction.x * Speed);
-                        if (RightTentacle.transform.rotation.z >= 60)
-                        {
-                            LTentacleState = TentacleState.Stop;
-                            LTentacleReady = false;
-                        }
+                        LeftTentacle.transform.Rotate(Vector3.forward * Speed);
                     }
                     break;
                 }
@@ -141,20 +142,22 @@ public class PoseidonScript : MonoBehaviour
                 {
                     if (right)
                     {
-                        RightTentacle.transform.Rotate(RTentacleShoulder, Direction.x * Speed * 0.5f);
-                        if (RightTentacle.transform.rotation.z >= 5)
+                        RightTentacle.transform.Rotate(Vector3.forward * Speed * 0.35f);
+                        if (RightTentacle.transform.rotation.z >= 0.0966f)
                         {
                             RTentacleState = TentacleState.Stop;
                             RTentacleReady = true;
+                            RTentacleNF = Time.time + RTentacleFR;
                         }
                     }
                     else
                     {
-                        LeftTentacle.transform.Rotate(LTentacleShoulder, -Direction.x * Speed * 0.5f);
-                        if (LeftTentacle.transform.rotation.z <= -10.36f)
+                        LeftTentacle.transform.Rotate(Vector3.forward * -Speed * 0.35f);
+                        if (LeftTentacle.transform.rotation.z <= -0.0966f)
                         {
                             LTentacleState = TentacleState.Stop;
                             LTentacleReady = true;
+                            LTentacleNF = Time.time + LTentacleFR;
                         }
                     }
                     break;
