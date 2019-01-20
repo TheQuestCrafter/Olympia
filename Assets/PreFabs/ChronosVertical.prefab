@@ -21,7 +21,8 @@ GameObject:
   - component: {fileID: 4326654967424934}
   - component: {fileID: 212812511435979894}
   - component: {fileID: 95974359366042876}
-  - component: {fileID: 65202448717637834}
+  - component: {fileID: 114542528211597714}
+  - component: {fileID: 61573553588932200}
   m_Layer: 0
   m_Name: Chronos Tentacle
   m_TagString: Untagged
@@ -194,18 +195,31 @@ PolygonCollider2D:
       - {x: 0.0318712, y: 0.011283259}
       - {x: 0.031896036, y: 0.011225164}
       - {x: 0.03184855, y: 0.011365235}
---- !u!65 &65202448717637834
-BoxCollider:
+--- !u!61 &61573553588932200
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1171525332350314}
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.3, y: 1}
+    newSize: {x: 0.3, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.065984935, y: 0.12694392, z: 0.20000002}
-  m_Center: {x: -0.000000054637592, y: 0.4365283, z: 0}
+  m_Size: {x: 0.3, y: 1}
+  m_EdgeRadius: 0
 --- !u!82 &82570902472040302
 AudioSource:
   m_ObjectHideFlags: 1
@@ -337,6 +351,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114542528211597714
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1171525332350314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a99b5fca0ab8be34a81335468b4894fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bb2D: {fileID: 0}
 --- !u!114 &114847270329310580
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -360,6 +386,8 @@ MonoBehaviour:
   RightTorchPrefab: {fileID: 1422139720155262, guid: 7c8c6e2a0c39efd46aa7ad0c0e0051fd,
     type: 2}
   LightingBallPrefab: {fileID: 1540295101897834, guid: fc02191de4c22e0419d1313d522a3e98,
+    type: 2}
+  HadesBigBomb: {fileID: 1395371305244398, guid: b24509ee6ed351d4385b0c09d3b2a6ef,
     type: 2}
   KronosGunLocation: {fileID: 4082909563596606}
   CreditsLocation: {fileID: 0}

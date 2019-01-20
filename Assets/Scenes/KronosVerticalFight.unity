@@ -113,23 +113,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &1633650 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1171525332350314, guid: 16cc01c10d89cae40a107bbcd70ab613,
-    type: 2}
-  m_PrefabInternal: {fileID: 2118433037}
---- !u!114 &1633651
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1633650}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a99b5fca0ab8be34a81335468b4894fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bb2D: {fileID: 0}
 --- !u!114 &373860806 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114652478487387334, guid: be8a7fbf698cd2140a6088f83115056c,
@@ -175,7 +158,7 @@ GameObject:
   m_Layer: 0
   m_Name: TorchFire2Location
   m_TagString: Enemy
-  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -469,7 +452,7 @@ GameObject:
   m_Layer: 0
   m_Name: TorchFire1Location
   m_TagString: Enemy
-  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -567,11 +550,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114968489318241802, guid: 16cc01c10d89cae40a107bbcd70ab613,
-        type: 2}
-      propertyPath: bar
-      value: 
-      objectReference: {fileID: 373860806}
     - target: {fileID: 114847270329310580, guid: 16cc01c10d89cae40a107bbcd70ab613,
         type: 2}
       propertyPath: torch1
@@ -587,12 +565,21 @@ Prefab:
       propertyPath: CreditsLocation
       value: 
       objectReference: {fileID: 424994656}
-    - target: {fileID: 114847270329310580, guid: 16cc01c10d89cae40a107bbcd70ab613,
+    - target: {fileID: 114968489318241802, guid: 16cc01c10d89cae40a107bbcd70ab613,
         type: 2}
-      propertyPath: HadesBigBomb
+      propertyPath: bar
       value: 
-      objectReference: {fileID: 1395371305244398, guid: b24509ee6ed351d4385b0c09d3b2a6ef,
+      objectReference: {fileID: 373860806}
+    - target: {fileID: 61573553588932200, guid: 16cc01c10d89cae40a107bbcd70ab613,
         type: 2}
+      propertyPath: m_Offset.y
+      value: 0.3952608
+      objectReference: {fileID: 0}
+    - target: {fileID: 61573553588932200, guid: 16cc01c10d89cae40a107bbcd70ab613,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 0.20947838
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 16cc01c10d89cae40a107bbcd70ab613, type: 2}
   m_IsPrefabParent: 0
