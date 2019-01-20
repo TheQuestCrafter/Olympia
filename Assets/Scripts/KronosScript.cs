@@ -43,24 +43,34 @@ public class KronosScript : MonoBehaviour
 
     private bool AttackZeus;
 
+    float initialAttackDelay;
 
     // Use this for initialization
     void Awake()
     {
+        // INITIAL ATTACK DELAY DIRECTLY BELOW
+        initialAttackDelay = 3.75f;
+
         if (this.player == null)
         {
             PlayerBehavior temp = FindObjectOfType<PlayerBehavior>();
             this.player = temp.gameObject;
         }
 
+        if (this.bossScript == null)
+        {
+            this.bossScript = FindObjectOfType<BossScriptTest>();
+        }
+
         HadesATK1FR = 1f;
-        HadesATK1NF = Time.time + HadesATK1FR;
+        HadesATK1NF = Time.time + HadesATK1FR + initialAttackDelay;
         HadesATK1_2FR = 10f;
-        HadesATK1_2NF = Time.time + HadesATK1_2FR;
+        HadesATK1_2NF = Time.time + HadesATK1_2FR + initialAttackDelay;
         ZeusATKFR = 2f;
+        ZeusATKNF = Time.time + ZeusATKFR + initialAttackDelay;
 
         KronosTongueATKFR = 3f;
-        KronosTongueATKNF = Time.time + KronosTongueATKFR;
+        KronosTongueATKNF = Time.time + KronosTongueATKFR + initialAttackDelay;
 
         ZeusBulletSpeed = 400;
         ZeusBulletLife = 3f;
@@ -79,7 +89,7 @@ public class KronosScript : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Time.time > HadesATK1NF && bossScript.hp <= 0)
+        if (Time.time > HadesATK1NF && bossScript.hp >= 0)
         {
             SpawnTorches();
             LeftTorch = GameObject.FindGameObjectWithTag("LeftTorch");
@@ -87,7 +97,7 @@ public class KronosScript : MonoBehaviour
 
         }
 
-        if (Time.time > HadesATK1_2NF && bossScript.hp <= 0)
+        if (Time.time > HadesATK1_2NF && bossScript.hp >= 0)
         {
 
             if (LeftTorch != null && RightTorch != null)
@@ -113,12 +123,12 @@ public class KronosScript : MonoBehaviour
 
         }
 
-        if (AttackZeus && Time.time > ZeusATKNF && bossScript.hp <= 0)
+        if (AttackZeus && Time.time > ZeusATKNF && bossScript.hp >= 0)
         {
             Attack2();
         }
 
-        if (Time.time > KronosTongueATKNF && !AttackZeus && bossScript.hp <= 0)
+        if (Time.time > KronosTongueATKNF && !AttackZeus && bossScript.hp >= 0)
         {
             Attack3();
 

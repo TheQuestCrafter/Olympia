@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KronosBigBombScript : MonoBehaviour {
+public class KronosBigBombScript : MonoBehaviour
+{
 
     // Use this for initialization
     GameObject player;
