@@ -55,9 +55,9 @@ public class HadesScript : MonoBehaviour
     {
         Movement();
 
-        if (bossScript.hp <= 0)
+        if (bossScript.hp >= 0)
             Attack2();
-        if (Time.time > Attack1NF && bossScript.hp <= 0)
+        if (Time.time > Attack1NF && bossScript.hp >= 0)
         {
             SpawnTorches();
             LeftTorch = GameObject.FindGameObjectWithTag("LeftTorch");
@@ -65,7 +65,7 @@ public class HadesScript : MonoBehaviour
 
         }
 
-        if (Time.time > Attack1_2NF && bossScript.hp <= 0)
+        if (Time.time > Attack1_2NF && bossScript.hp >= 0)
         {
 
             if (LeftTorch != null && RightTorch != null)
