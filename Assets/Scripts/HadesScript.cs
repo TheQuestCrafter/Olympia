@@ -15,7 +15,7 @@ public class HadesScript : MonoBehaviour
     public Transform torch1, torch2;
     public GameObject LeftTorchPrefab, RightTorchPrefab;
     public Transform hadesGun;
-    GameObject LeftTorch, RightTorch;
+    public GameObject LeftTorch, RightTorch;
     float BigBombSpeed;
 
     bool moveRight;
@@ -43,7 +43,7 @@ public class HadesScript : MonoBehaviour
         }
         Attack1FR = 16f;
         Attack1NF = Time.time + Attack1FR;
-        Attack1_2FR = 15f;
+        Attack1_2FR = 13f;
         Attack1_2NF = Time.time + Attack1_2FR;
         Attack2FR = 6f;
         Attack2NF = Time.time + Attack2FR;

@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 114134636694303310}
   - component: {fileID: 114904449323979836}
   - component: {fileID: 82955941937927786}
+  - component: {fileID: 95997063984659092}
   m_Layer: 0
   m_Name: HadesBoss
   m_TagString: Hades
@@ -234,6 +235,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &95997063984659092
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1146010480640016}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 46273680093d98c45a0f862bd55c5e37, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114134636694303310
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -249,7 +268,7 @@ MonoBehaviour:
   deathSound: {fileID: 8300000, guid: a4b54678ab9275445ba713dcd6fecbec, type: 3}
   damageSound: {fileID: 8300000, guid: 56752bb1056e59c44ac681252581dfbd, type: 3}
   idleSound: {fileID: 8300000, guid: a4b54678ab9275445ba713dcd6fecbec, type: 3}
-  hp: 1000
+  hp: 900
   explosionEffect: {fileID: 1299146535993584, guid: d60805234b04c6d488c68eaa44eaec62,
     type: 2}
   bar: {fileID: 0}
@@ -277,6 +296,8 @@ MonoBehaviour:
   RightTorchPrefab: {fileID: 1422139720155262, guid: 7c8c6e2a0c39efd46aa7ad0c0e0051fd,
     type: 2}
   hadesGun: {fileID: 4160388450936618}
+  LeftTorch: {fileID: 0}
+  RightTorch: {fileID: 0}
 --- !u!212 &212780776419285788
 SpriteRenderer:
   m_ObjectHideFlags: 1

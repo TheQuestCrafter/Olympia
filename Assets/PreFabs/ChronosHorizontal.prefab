@@ -74,7 +74,6 @@ GameObject:
   - component: {fileID: 95114206694863342}
   - component: {fileID: 61101436166533882}
   - component: {fileID: 114289331742963674}
-  - component: {fileID: 114737305361842440}
   m_Layer: 10
   m_Name: Chronos Tentacle
   m_TagString: Untagged
@@ -411,22 +410,10 @@ MonoBehaviour:
   deathSound: {fileID: 8300000, guid: ef1efba666a8d7248accf9be76960ac7, type: 3}
   damageSound: {fileID: 8300000, guid: 76b68fde50c129b4fa0df52e2e5065b2, type: 3}
   idleSound: {fileID: 8300000, guid: 51fb7ffbf12819c40bd99af6b21fa057, type: 3}
-  hp: 1000
+  hp: 900
   explosionEffect: {fileID: 1299146535993584, guid: d60805234b04c6d488c68eaa44eaec62,
     type: 2}
   bar: {fileID: 0}
---- !u!114 &114737305361842440
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1960071647737516}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a99b5fca0ab8be34a81335468b4894fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bb2D: {fileID: 0}
 --- !u!212 &212128035059190140
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -506,7 +493,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: a528f7115bb2f554ea9949209f28e7da, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

@@ -62,15 +62,15 @@ public class KronosScript : MonoBehaviour
             this.bossScript = FindObjectOfType<BossScriptTest>();
         }
 
-        HadesATK1FR = 1f;
-        HadesATK1NF = Time.time + HadesATK1FR + initialAttackDelay;
-        HadesATK1_2FR = 10f;
-        HadesATK1_2NF = Time.time + HadesATK1_2FR + initialAttackDelay;
+        HadesATK1FR = 8f;
+        HadesATK1NF = Time.time + HadesATK1FR;
+        HadesATK1_2FR = 13f;
+        HadesATK1_2NF = Time.time + HadesATK1_2FR;
         ZeusATKFR = 2f;
-        ZeusATKNF = Time.time + ZeusATKFR + initialAttackDelay;
+        ZeusATKNF = Time.time + ZeusATKFR;
 
         KronosTongueATKFR = 3f;
-        KronosTongueATKNF = Time.time + KronosTongueATKFR + initialAttackDelay;
+        KronosTongueATKNF = Time.time + KronosTongueATKFR;
 
         ZeusBulletSpeed = 400;
         ZeusBulletLife = 3f;
@@ -162,7 +162,7 @@ public class KronosScript : MonoBehaviour
         var torch_2 = (GameObject)Instantiate(RightTorchPrefab, torch2.transform.position, torch2.transform.rotation);
 
 
-        HadesATK1NF = Time.time + HadesATK1FR + 20f;
+        HadesATK1NF = Time.time + HadesATK1FR + 15f;
 
 
     }

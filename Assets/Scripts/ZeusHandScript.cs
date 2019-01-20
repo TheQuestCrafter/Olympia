@@ -22,6 +22,7 @@ public class ZeusHandScript : MonoBehaviour
     {
 
         fireRate = 8f;
+        nextFire = Time.time + 3f;
         bulletSpeed = 400;
         bulletLife = 3f;
 
@@ -40,7 +41,7 @@ public class ZeusHandScript : MonoBehaviour
             }
         }
 
-        if (bossFightStarted)
+        if (Time.time > nextFire)
             Attack();
     }
 
