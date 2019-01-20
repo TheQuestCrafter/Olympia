@@ -148,7 +148,7 @@ public class BulletManager : MonoBehaviour
                
                 break;
             case 2:
-                weaponDamage = 0.42f;
+                weaponDamage = 0.38f;
                 fireRate = 0.01f;
                 if (Time.time > nextFire)
                 {
@@ -223,7 +223,7 @@ public class BulletManager : MonoBehaviour
         if (shotType == 2)
         {
             beamTracker++;
-            if (beamTracker > 10)
+            if (beamTracker > 30)
             {
                 audioSource.PlayOneShot(firingBeam);
             }
