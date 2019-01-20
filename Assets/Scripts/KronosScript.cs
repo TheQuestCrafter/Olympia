@@ -21,6 +21,7 @@ public class KronosScript : MonoBehaviour
     public GameObject LeftTorchPrefab, RightTorchPrefab;
     GameObject LeftTorch, RightTorch;
     public GameObject LightingBallPrefab;
+    public GameObject HadesBigBomb;
     public Transform KronosGunLocation;
 
     public Transform CreditsLocation;
@@ -39,6 +40,7 @@ public class KronosScript : MonoBehaviour
     public GameObject KronosTentacle;
     private float KronosTongueATKNF, KronosTongueATKFR;
 
+    private bool AttackZeus;
 
 
     // Use this for initialization
@@ -69,6 +71,8 @@ public class KronosScript : MonoBehaviour
         credit = (GameObject)Instantiate(Credits, CreditsLocation.transform.position, CreditsLocation.transform.rotation);
 
         StartCredit = false;
+
+        AttackZeus = true;
     }
 
     // Update is called once per frame
@@ -107,9 +111,18 @@ public class KronosScript : MonoBehaviour
             }
 
         }
-        //Attack2();
-        if(Time.time > KronosTongueATKNF)
-                Attack3();
+
+        if (AttackZeus && Time.time > ZeusATKNF)
+        {
+            Attack2();
+        }
+
+        if (Time.time > KronosTongueATKNF && !AttackZeus)
+        {
+            Attack3();
+
+        }
+              
 
     }
 
@@ -150,6 +163,8 @@ public class KronosScript : MonoBehaviour
             if (Time.time > ZeusATKNF)
             {
                 int temp = rand.Next(135, 225);
+                int temp2 = rand.Next(135, 225);
+
 
                 float angle = (float)temp;
 
@@ -162,6 +177,24 @@ public class KronosScript : MonoBehaviour
                 var proj = Instantiate(LightingBallPrefab, KronosGunLocation.transform.position, Quaternion.identity);
                 proj.GetComponent<Rigidbody2D>().velocity =
                     new Vector2(projectileMoveDirection.x, projectileMoveDirection.y);
+
+                
+
+                float angle2 = (float)temp2;
+
+                float projectileDirXposition2 = KronosGunLocation.transform.position.x + Mathf.Sin((angle2 * Mathf.PI) / 180) * 5f;
+                float projectileDirYposition2 = KronosGunLocation.transform.position.y + Mathf.Cos((angle2 * Mathf.PI) / 180) * 5f;
+
+                Vector3 projectileVector2 = new Vector3(projectileDirXposition2, projectileDirYposition2);
+                Vector3 projectileMoveDirection2 = (projectileVector2 - KronosGunLocation.transform.position).normalized * 2f;
+
+                var proj2 = Instantiate(HadesBigBomb, KronosGunLocation.transform.position, Quaternion.identity);
+                proj2.GetComponent<Rigidbody2D>().velocity =
+                    new Vector2(projectileMoveDirection2.x, projectileMoveDirection2.y);
+
+
+                AttackZeus = false;
+
 
                 // We should alter this time for balancing later
                 ZeusATKNF = Time.time + ZeusATKFR + 3;
@@ -185,6 +218,22 @@ public class KronosScript : MonoBehaviour
                 proj.GetComponent<Rigidbody2D>().velocity =
                     new Vector2(projectileMoveDirection.x, projectileMoveDirection.y);
 
+                int temp2 = rand.Next(240, 300);
+
+                float angle2 = (float)temp2;
+
+                float projectileDirXposition2 = KronosGunLocation.transform.position.x + Mathf.Sin((angle2 * Mathf.PI) / 180) * 5f;
+                float projectileDirYposition2 = KronosGunLocation.transform.position.y + Mathf.Cos((angle2 * Mathf.PI) / 180) * 5f;
+
+                Vector3 projectileVector2 = new Vector3(projectileDirXposition2, projectileDirYposition2);
+                Vector3 projectileMoveDirection2 = (projectileVector2 - KronosGunLocation.transform.position).normalized * 2f;
+
+                var proj2 = Instantiate(HadesBigBomb, KronosGunLocation.transform.position, Quaternion.identity);
+                proj2.GetComponent<Rigidbody2D>().velocity =
+                    new Vector2(projectileMoveDirection2.x, projectileMoveDirection2.y);
+
+                AttackZeus = false;
+
                 // We should alter this time for balancing later
                 ZeusATKNF = Time.time + ZeusATKFR + 3;
             }
@@ -197,77 +246,161 @@ public class KronosScript : MonoBehaviour
 
     void Attack3()
     {
-        switch (KronosMoveState)
+
+        if(!Vertical)
         {
-            case 1:
-                if (KronosParent.gameObject.transform.position.x >= 0)
-                {
-                    this.Direction = new Vector2(0, -0.05f); // create new vector based on input combo
-                    this.Direction.Normalize(); // normalize so that the direction is consistent
-
-                    //this.gameObject.transform.Translate(Direction * 2f);
-
-                    //this.gameObject.GetComponentInParent<GameObject>().transform.Translate(Direction * 2f);
-
-                    KronosParent.gameObject.transform.Translate(Direction);
-                
-
-                }
-                else
-                {
-                    KronosMoveState++;
-                }
-
-                break;
-            case 2:
-
-                this.Direction = new Vector2(0, 0); // create new vector based on input combo
-                this.Direction.Normalize(); // normalize so that the direction is consistent
-                //this.gameObject.GetComponentInParent<GameObject>().transform.Translate(Direction * 2f);
-
-                KronosParent.gameObject.transform.Translate(Direction);
-                KronosTentacle.gameObject.GetComponent<KronosTentacleScript>().StartAnimation();
-                KronosMoveTime = Time.time + 2f;
-                
-                KronosMoveState++;
-
-                break;
-            case 3:
-
-                if (Time.time > KronosMoveTime )
-                {
-                    KronosTentacle.gameObject.GetComponent<KronosTentacleScript>().EndAnimation();
-
-                    if (KronosParent.gameObject.transform.position.x <= 5.4)
+            switch (KronosMoveState)
+            {
+                case 1:
+                    if (KronosParent.gameObject.transform.position.x >= 0)
                     {
-                        this.Direction = new Vector2(0, 0.1f); // create new vector based on input combo
+                        this.Direction = new Vector2(0, -0.05f); // create new vector based on input combo
                         this.Direction.Normalize(); // normalize so that the direction is consistent
-                                                    //this.gameObject.GetComponentInParent<GameObject>().transform.Translate(Direction * 2f);
+
+                        //this.gameObject.transform.Translate(Direction * 2f);
+
+                        //this.gameObject.GetComponentInParent<GameObject>().transform.Translate(Direction * 2f);
 
                         KronosParent.gameObject.transform.Translate(Direction);
+
+
                     }
                     else
                     {
                         KronosMoveState++;
                     }
-                }
-               
 
-                break;
-            case 4:
+                    break;
+                case 2:
 
-                this.Direction = new Vector2(0, 0); // create new vector based on input combo
-                this.Direction.Normalize(); // normalize so that the direction is consistent
-                //this.gameObject.GetComponentInParent<GameObject>().transform.Translate(Direction * 2f);
+                    this.Direction = new Vector2(0, 0); // create new vector based on input combo
+                    this.Direction.Normalize(); // normalize so that the direction is consistent
+                                                //this.gameObject.GetComponentInParent<GameObject>().transform.Translate(Direction * 2f);
 
-                KronosParent.gameObject.transform.Translate(Direction);
-                
-                KronosMoveState=1;
+                    KronosParent.gameObject.transform.Translate(Direction);
+                    KronosTentacle.gameObject.GetComponent<KronosTentacleScript>().StartAnimation();
+                    KronosMoveTime = Time.time + 2f;
 
-                KronosTongueATKNF = Time.time + KronosTongueATKFR;
+                    KronosMoveState++;
 
-                break;
+                    break;
+                case 3:
 
+                    if (Time.time > KronosMoveTime)
+                    {
+                        KronosTentacle.gameObject.GetComponent<KronosTentacleScript>().EndAnimation();
+
+                        if (KronosParent.gameObject.transform.position.x <= 5.4)
+                        {
+                            this.Direction = new Vector2(0, 0.1f); // create new vector based on input combo
+                            this.Direction.Normalize(); // normalize so that the direction is consistent
+                                                        //this.gameObject.GetComponentInParent<GameObject>().transform.Translate(Direction * 2f);
+
+                            KronosParent.gameObject.transform.Translate(Direction);
+                        }
+                        else
+                        {
+                            KronosMoveState++;
+                        }
+                    }
+
+
+                    break;
+                case 4:
+
+                    this.Direction = new Vector2(0, 0); // create new vector based on input combo
+                    this.Direction.Normalize(); // normalize so that the direction is consistent
+                                                //this.gameObject.GetComponentInParent<GameObject>().transform.Translate(Direction * 2f);
+
+                    KronosParent.gameObject.transform.Translate(Direction);
+
+                    KronosMoveState = 1;
+
+                   
+
+                    KronosTongueATKNF = Time.time + KronosTongueATKFR;
+                    AttackZeus = true;
+                    break;
+
+            }
         }
+        else
+        {
+            switch (KronosMoveState)
+            {
+                case 1:
+                    if (KronosParent.gameObject.transform.position.y >= 0.60)
+                    {
+                        this.Direction = new Vector2(0, -0.05f); // create new vector based on input combo
+                        this.Direction.Normalize(); // normalize so that the direction is consistent
+
+                        //this.gameObject.transform.Translate(Direction * 2f);
+
+                        //this.gameObject.GetComponentInParent<GameObject>().transform.Translate(Direction * 2f);
+
+                        KronosParent.gameObject.transform.Translate(Direction);
+
+
+                    }
+                    else
+                    {
+                        KronosMoveState++;
+                    }
+
+                    break;
+                case 2:
+
+                    this.Direction = new Vector2(0, 0); // create new vector based on input combo
+                    this.Direction.Normalize(); // normalize so that the direction is consistent
+                                                //this.gameObject.GetComponentInParent<GameObject>().transform.Translate(Direction * 2f);
+
+                    KronosParent.gameObject.transform.Translate(Direction);
+                    KronosTentacle.gameObject.GetComponent<KronosTentacleScript>().StartAnimation();
+                    KronosMoveTime = Time.time + 2f;
+
+                    KronosMoveState++;
+
+                    break;
+                case 3:
+
+                    if (Time.time > KronosMoveTime)
+                    {
+                        KronosTentacle.gameObject.GetComponent<KronosTentacleScript>().EndAnimation();
+
+                        if (KronosParent.gameObject.transform.position.y <= 3.48)
+                        {
+                            this.Direction = new Vector2(0, 0.1f); // create new vector based on input combo
+                            this.Direction.Normalize(); // normalize so that the direction is consistent
+                                                        //this.gameObject.GetComponentInParent<GameObject>().transform.Translate(Direction * 2f);
+
+                            KronosParent.gameObject.transform.Translate(Direction);
+                        }
+                        else
+                        {
+                            KronosMoveState++;
+                        }
+                    }
+
+
+                    break;
+                case 4:
+
+                    this.Direction = new Vector2(0, 0); // create new vector based on input combo
+                    this.Direction.Normalize(); // normalize so that the direction is consistent
+                                                //this.gameObject.GetComponentInParent<GameObject>().transform.Translate(Direction * 2f);
+
+                    KronosParent.gameObject.transform.Translate(Direction);
+
+                    KronosMoveState = 1;
+
+                    KronosTongueATKNF = Time.time + KronosTongueATKFR;
+                    AttackZeus = true;
+                    break;
+
+            }
+        }
+
+
+       
     }
 }

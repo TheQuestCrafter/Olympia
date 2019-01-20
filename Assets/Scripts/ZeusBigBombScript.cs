@@ -26,6 +26,10 @@ public class ZeusBigBombScript : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        player.GetComponent<PlayerBehavior>().health--;
+        if (collision.gameObject.tag == "Player")
+        {
+
+            player.GetComponent<PlayerBehavior>().health--;
+        }
     }
 }

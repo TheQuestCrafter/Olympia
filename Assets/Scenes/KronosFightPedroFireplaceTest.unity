@@ -129,6 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a99b5fca0ab8be34a81335468b4894fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bb2D: {fileID: 0}
 --- !u!1001 &198402032
 Prefab:
   m_ObjectHideFlags: 0
@@ -518,6 +519,25 @@ Prefab:
       propertyPath: KronosTentacle
       value: 
       objectReference: {fileID: 154324766}
+    - target: {fileID: 1960071647737516, guid: 0d5289c107bccf44587f412f95c4c262, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 65094393769006294, guid: 0d5289c107bccf44587f412f95c4c262,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 212128035059190140, guid: 0d5289c107bccf44587f412f95c4c262,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 95114206694863342, guid: 0d5289c107bccf44587f412f95c4c262,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0d5289c107bccf44587f412f95c4c262, type: 2}
   m_IsPrefabParent: 0

@@ -127,9 +127,6 @@ public class HadesScript : MonoBehaviour
             hadesGun.transform.position,
             this.gameObject.transform.rotation);
 
-
-            //BigBomb.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, -1) * BigBombSpeed);
-
             Attack2NF = Time.time + Attack2FR;
         }
     }
