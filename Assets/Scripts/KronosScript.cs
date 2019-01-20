@@ -99,7 +99,7 @@ public class KronosScript : MonoBehaviour
 
         }
         Attack2();
-        Attack3();
+       // Attack3();
 
     }
 
@@ -185,45 +185,45 @@ public class KronosScript : MonoBehaviour
 
     }
 
-    void Attack3()
-    {
-        switch (KronosMoveState)
-        {
-            case 1:
-                if (this.gameObject.transform.position.x >= -7.5)
-                {
-                    this.Direction = new Vector2(-1, 0); // create new vector based on input combo
-                    this.Direction.Normalize(); // normalize so that the direction is consistent
-                    //this.gameObject.GetComponent<Rigidbody2D>().AddForce(Direction * 2f);
+    //void Attack3()
+    //{
+    //    switch (KronosMoveState)
+    //    {
+    //        case 1:
+    //            if (this.gameObject.transform.position.x >= -7.5)
+    //            {
+    //                this.Direction = new Vector2(-1, 0); // create new vector based on input combo
+    //                this.Direction.Normalize(); // normalize so that the direction is consistent
+    //                //this.gameObject.GetComponent<Rigidbody2D>().AddForce(Direction * 2f);
 
-                }
-                else
-                {
-                    KronosMoveState++;
-                }
+    //            }
+    //            else
+    //            {
+    //                KronosMoveState++;
+    //            }
 
-                break;
-            case 2:
+    //            break;
+    //        case 2:
 
-                this.Direction = new Vector2(0, 0); // create new vector based on input combo
-                this.Direction.Normalize(); // normalize so that the direction is consistent
-                this.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
-                KronosMoveTime = Time.time + 3f;
-                KronosMoveState++;
+    //            this.Direction = new Vector2(0, 0); // create new vector based on input combo
+    //            this.Direction.Normalize(); // normalize so that the direction is consistent
+    //            this.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+    //            KronosMoveTime = Time.time + 3f;
+    //            KronosMoveState++;
 
-                break;
-            case 3:
+    //            break;
+    //        case 3:
 
-                if (Time.time > KronosMoveState)
-                {
-                    this.Direction = new Vector2(1, 0); // create new vector based on input combo
-                    this.Direction.Normalize(); // normalize so that the direction is consistent
-                    this.gameObject.GetComponent<Rigidbody2D>().AddForce(Direction * 2f);
-                    Destroy(this.gameObject, 8f);
-                }
+    //            if (Time.time > KronosMoveState)
+    //            {
+    //                this.Direction = new Vector2(1, 0); // create new vector based on input combo
+    //                this.Direction.Normalize(); // normalize so that the direction is consistent
+    //                this.gameObject.GetComponent<Rigidbody2D>().AddForce(Direction * 2f);
+    //                Destroy(this.gameObject, 8f);
+    //            }
 
-                break;
+    //            break;
 
-        }
-    }
+    //    }
+    //}
 }
